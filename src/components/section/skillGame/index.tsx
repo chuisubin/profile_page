@@ -47,7 +47,6 @@ export const SkillGame = () => {
   const [name, setName] = useState<string>("");
   const [success, setSuccess] = useState<boolean>(false);
 
-
   let intervalId: NodeJS.Timeout | null = null;
   useEffect(() => {
     if (isStart) {
@@ -65,10 +64,10 @@ export const SkillGame = () => {
   }, [isStart]);
 
   useEffect(() => {
-    if(isClient){
+    if (isClient) {
       getRankList();
-      setRandomListHandle()
-    } 
+      setRandomListHandle();
+    }
   }, [isClient]);
 
   useEffect(() => {
@@ -113,7 +112,7 @@ export const SkillGame = () => {
   const doneGameHandle = () => {
     const endTime = new Date().getTime();
     const timeDiff = (endTime - timeStart) / 1000;
-   
+
     setAllTime(timeDiff);
 
     setSuccess(true);
@@ -131,7 +130,6 @@ export const SkillGame = () => {
 
     setSuccess(false);
     setName("");
-    
   };
 
   const getRankList = () => {
@@ -149,15 +147,17 @@ export const SkillGame = () => {
   };
 
   return (
-    <div className=" relative  ">
-      <h1> GAME</h1>
+    <div className=" relative text-secondary-500 ">
       <div className="relative">
-        <div className=" flex flex-row flex-wrap gap-4 mb-4 ">
+        <div className=" flex flex-row flex-wrap gap-2 mb-4 bg-white p-4 rounded-card border-2 border-secondary-500">
           {skillSet.map((skill, index) => {
             const isDone = doneList.some((it) => it.title == skill.title);
             return (
               <div
-                className={clsx("w-10 lg:w-20 h-auto aspect-square ", isDone ? "" : "")}
+                className={clsx(
+                  "w-10 lg:w-10 h-auto aspect-square ",
+                  isDone ? "" : ""
+                )}
                 key={index}
                 title={skill.title}
               >
@@ -181,18 +181,21 @@ export const SkillGame = () => {
             );
           })}
         </div>
-       
+
         <div className=" flex flex-row  justify-between gap-2">
-          CURRENT TIME :{timeCount}
+          CURRENT TIME :{timeCount}s
         </div>
 
-        <div className=" grid   grid-cols-4 lg:grid-cols-8 gap-2 lg:gap-4 mt-10 relative p-2 lg:p-10">
-          {( !isStart ||success)
-            && (
-              <div className="flex items-center  absolute top-0 bottom-0 right-0 left-0 bg-black/50  z-10">
-                {success ? (
-                  <div className="mx-auto   bg-white p-10">
-                    <div className=" flex flex-row  justify-between mb-4 gap-4" >
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className=" transition-all border-2 border-secondary-500 bg-white rounded-card grid   grid-cols-6 lg:grid-cols-10 gap-1 lg:gap-2  relative p-2 lg:p-4"
+        >
+          {(!isStart || success) && transformList.length > 0 && (
+            <div className=" rounded-card flex items-center  absolute top-0 bottom-0 right-0 left-0 backdrop-blur-sm  z-10">
+              {success ? (
+                <div className="mx-auto   bg-white p-10">
+                  <div className=" flex flex-row  justify-between mb-4 gap-4">
                     <input
                       value={name}
                       onChange={(event) => {
@@ -201,67 +204,64 @@ export const SkillGame = () => {
                       placeholder="input name"
                       className="border  w-auto p-2"
                     />
-                     Time: {allTime}
-                    </div>
-                   
-                    <button
-                      onClick={() => {
-                        addName();
-                      }}
-                      disabled={name.trim().length == 0}
-                      className=" bg-secondary-500 text-white disabled:bg-gray-500 px-4 py-2 rounded-3xl shadow "
-                    >
-                      enter
-                    </button>
-                    
+                    Time: {allTime}
                   </div>
-                ) : (
+
                   <button
-                    className="transition-all hover:scale-105 mx-auto border-2  px-4 py-2 bg-secondary-500 text-white rounded-3xl shadow "
                     onClick={() => {
-                      setIsStart(true);
-                      const startTime = new Date().getTime();
-                      setTimeStart(startTime);
+                      addName();
                     }}
+                    disabled={name.trim().length == 0}
+                    className=" bg-secondary-500 text-white disabled:bg-gray-500 px-4 py-2 rounded-3xl shadow "
                   >
-                    start
+                    enter
                   </button>
-                )}
-              </div>
-            )  
-            }
+                </div>
+              ) : (
+                <button
+                  className="transition-all hover:scale-105 mx-auto border-2  px-4 py-2 bg-secondary-500 text-white rounded-3xl shadow "
+                  onClick={() => {
+                    setIsStart(true);
+                    const startTime = new Date().getTime();
+                    setTimeStart(startTime);
+                  }}
+                >
+                  start
+                </button>
+              )}
+            </div>
+          )}
 
-            {transformList.map((item, index) => {
-              const propsFlipped = !matchList.includes(index);
+          {transformList.map((item, index) => {
+            const propsFlipped = !matchList.includes(index);
 
-              const isDone = doneList.some((it) => it.title == item.title);
-              return  <motion.div key={index} >
-                  
-                    <SkillGameCard
-                      index={index}
-                      item={item}
-                      isDone={isDone}
-                      enableClick={matchList.length < 2}
-                      clickHandle={() => {
-                        if (matchList.length == 0) {
-                          setMatchList([index]);
-                        } else if (matchList.length == 1) {
-                          setMatchList([...matchList, index]);
-                          checkMatch(index);
-                        }
-                      }}
-                      propsFlipped={propsFlipped}
-                    />
-                  
-                </motion.div>
-              
-            })}
-        </div>
+            const isDone = doneList.some((it) => it.title == item.title);
+            return (
+              <motion.div key={index}>
+                <SkillGameCard
+                  index={index}
+                  item={item}
+                  isDone={isDone}
+                  enableClick={matchList.length < 2}
+                  clickHandle={() => {
+                    if (matchList.length == 0) {
+                      setMatchList([index]);
+                    } else if (matchList.length == 1) {
+                      setMatchList([...matchList, index]);
+                      checkMatch(index);
+                    }
+                  }}
+                  propsFlipped={propsFlipped}
+                />
+              </motion.div>
+            );
+          })}
+        </motion.div>
       </div>
 
       <div className="">
-        {rankList.length>0&&  <RankView rankList={rankList} />}
-        </div>
+        {rankList.length > 0 && <RankView rankList={rankList} />}
+      </div>
     </div>
   );
 };

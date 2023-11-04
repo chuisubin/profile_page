@@ -1,20 +1,16 @@
-"use client"
+"use client";
 
-import {SkillGame} from "@/components/section/skillGame"
+import { SpotlightCard } from "@/components/common/SpotlightCard";
+import { SkillGame } from "@/components/section/skillGame";
 
-export const SkillGamePage=()=>{
-
-
-    return (
-        <div className="py-20  h-full ">
-        <div className=" relative mx-auto container  w-full  bg-white h-full p-2 lg:p-10 ">
-
-        <div className=" ">
+export const SkillGamePage = () => {
+  return (
+    <div className="py-20  h-full ">
+      <div className=" relative mx-auto container  bg-black/80 rounded-card  w-full    h-full p-2 lg:p-10 ">
+        {/* <SpotlightCard> */}
         <SkillGame />
-        </div>
-
-
-        </div>
-        </div>
-    )
-}
+        {/* </SpotlightCard> */}
+      </div>
+    </div>
+  );
+};
