@@ -35,7 +35,9 @@ body {
     @apply
     relative  h-auto
     font-COOL
-    bg-fixed bg-gradient-to-b  from-primary-700  to-black 
+    bg-fixed bg-gradient-to-b 
+    from-white  via-primary-600 to-primary-700 
+    dark:from-primary-600 dark:via-primary-700 dark:to-black 
 }
 
 ::-moz-selection {
@@ -81,7 +83,7 @@ body {
    
   
   @apply relative
-    bg-white/10  backdrop-blur	
+     bg-white/10  backdrop-blur	 
 }
 
 // .spotlight-shadow::before{

@@ -88,7 +88,7 @@ export const OptionList = (props: OptionListType) => {
       animate={{ display: "flex" }}
       transition={{ delay: 3, duration: 1 }}
       className={clsx(
-        "hidden  w-full  flex-col text-white   items-start justify-start gap-4 relative"
+        "hidden  w-full  flex-col text-primary-700 dark:text-white   items-start justify-start gap-4 relative"
       )}
     >
       {optionListData.map((data, index) => {
@@ -105,7 +105,7 @@ export const OptionList = (props: OptionListType) => {
             }}
             className={clsx(
               "flex flex-row items-center gap-2 transition-all",
-              isCurrentSelected && "scale-105 bg-secondary-500 px-2 "
+              isCurrentSelected && "scale-105 bg-secondary-500  px-2 "
             )}
           >
             <OptionItem
@@ -123,13 +123,20 @@ export const OptionList = (props: OptionListType) => {
                 delay={data.delay}
                 duration={data.duration}
                 cursorClassName="bg-white"
-                className={clsx(" text-4xl font-COOL text-white",isCurrentSelected&&"")}
+                className={clsx(
+                  " text-4xl font-COOL ",
+                  isCurrentSelected
+                    ? " text-white"
+                    : "text-primary-700 dark:text-white"
+                )}
               />
             </OptionItem>
 
             {isCurrentSelected && (
               <motion.div className="w-6 h-6 transition-colors ">
-                <PlayIcon className={clsx(" rotate-180 w-full h-full  fill-white  ")} />
+                <PlayIcon
+                  className={clsx(" rotate-180 w-full h-full  fill-white ")}
+                />
               </motion.div>
             )}
           </motion.div>

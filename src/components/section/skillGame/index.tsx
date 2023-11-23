@@ -149,7 +149,7 @@ export const SkillGame = () => {
   return (
     <div className=" relative text-secondary-500 ">
       <div className="relative">
-        <div className=" flex flex-row flex-wrap gap-2 mb-4 bg-white p-4 rounded-card border-2 border-secondary-500">
+        <div className=" flex flex-row flex-wrap gap-2 mb-4 bg-white p-4 rounded-glass border-2 border-secondary-500">
           {skillSet.map((skill, index) => {
             const isDone = doneList.some((it) => it.title == skill.title);
             return (
@@ -189,10 +189,10 @@ export const SkillGame = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className=" transition-all border-2 border-secondary-500 bg-white rounded-card grid   grid-cols-6 lg:grid-cols-10 gap-1 lg:gap-2  relative p-2 lg:p-4"
+          className=" transition-all border-2 border-secondary-500 bg-white rounded-glass grid   grid-cols-6 lg:grid-cols-10 gap-1 lg:gap-2  relative p-2 lg:p-4"
         >
           {(!isStart || success) && transformList.length > 0 && (
-            <div className=" rounded-card flex items-center  absolute top-0 bottom-0 right-0 left-0 backdrop-blur-sm  z-10">
+            <div className=" rounded-glass flex items-center  absolute top-0 bottom-0 right-0 left-0 backdrop-blur-sm  z-10">
               {success ? (
                 <div className="mx-auto   bg-white p-10">
                   <div className=" flex flex-row  justify-between mb-4 gap-4">
@@ -212,14 +212,14 @@ export const SkillGame = () => {
                       addName();
                     }}
                     disabled={name.trim().length == 0}
-                    className=" bg-secondary-500 text-white disabled:bg-gray-500 px-4 py-2 rounded-3xl shadow "
+                    className=" bg-secondary-500 text-white disabled:bg-gray-500 px-4 py-2 rounded shadow "
                   >
                     enter
                   </button>
                 </div>
               ) : (
                 <button
-                  className="transition-all hover:scale-105 mx-auto border-2  px-4 py-2 bg-secondary-500 text-white rounded-3xl shadow "
+                  className="transition-all hover:scale-105 mx-auto border-2  px-4 py-2 bg-secondary-500 text-white rounded shadow "
                   onClick={() => {
                     setIsStart(true);
                     const startTime = new Date().getTime();

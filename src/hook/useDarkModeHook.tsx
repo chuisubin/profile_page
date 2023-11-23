@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React, { useLayoutEffect } from "react";
 import { useState, useEffect, useMemo, useContext } from "react";
@@ -15,8 +15,7 @@ export const DarkModeProvider = (props: { children?: React.ReactNode }) => {
   const [isDarkMode, setDarkMode] = useState(false);
   const isClient = useIsClient();
   useEffect(() => {
-    if(isClient)
-      getDefaultTheme();
+    if (isClient) getDefaultTheme();
   }, [isClient]);
 
   const getDefaultTheme = async () => {
@@ -28,12 +27,12 @@ export const DarkModeProvider = (props: { children?: React.ReactNode }) => {
   };
 
   const changeTheme = async () => {
-    // const root = window.document.documentElement;
-    // await localStorage.setItem("theme", isDarkMode ? "light" : "dark");
+    const root = window.document.documentElement;
+    await localStorage.setItem("theme", isDarkMode ? "light" : "dark");
 
-    // root.className = isDarkMode ? "" : "dark";
+    root.className = isDarkMode ? "" : "dark";
 
-    // setDarkMode(!isDarkMode);
+    setDarkMode(!isDarkMode);
   };
 
   return (
@@ -43,12 +42,9 @@ export const DarkModeProvider = (props: { children?: React.ReactNode }) => {
         changeTheme: changeTheme,
       }}
     >
-      <>
-        {props.children}  
-      </>
+      <>{props.children}</>
     </DarkModeContext.Provider>
   );
 };
 
-export const useDarkMode = () =>  useContext(DarkModeContext);
-
+export const useDarkMode = () => useContext(DarkModeContext);

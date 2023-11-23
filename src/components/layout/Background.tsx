@@ -99,7 +99,7 @@ const Particle = () => {
           move: {
             enable: true,
             speed: 1,
-            direction: "bottom",
+            direction: isDarkMode ? "bottom" : "top",
             straight: true,
             random: false,
           },

@@ -26,7 +26,8 @@ const config: Config = {
         screen: "100dvh"
       },
       borderRadius:{
-        "card":"1rem"
+        "card": "1rem",
+        "glass":"0.5rem"
       },
       colors:{
         // dark:{
