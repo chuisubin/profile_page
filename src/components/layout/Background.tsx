@@ -112,7 +112,7 @@ const Particle = () => {
           },
         },
         interactivity: {
-          detect_on: "window",
+          detect_on: "parent",
           events: {
             onHover: {
               enable: true,
@@ -172,8 +172,8 @@ const Particle = () => {
 
 export const Background = () => {
   return (
-    <div>
+    <>
       <Particle />
-    </div>
+    </>
   );
 };

@@ -2,15 +2,15 @@ import { Metadata } from "next";
 
 export const metadata: {[key:string]:Metadata}={
     "root":{
-        "title":"subin",
+        "title":"Angus Profile Page",
         "colorScheme": "light dark",
         "description":"",
         "openGraph":{
           "type":"website",
           "locale":"en_HK",
           // "url":"https://cooltechsol.com",
-          "siteName":"",
-          "title":"",
+          "siteName":"Angus Profile Page",
+          "title":"Angus Profile Page",
           "description":"",
           // "images":[
           //   {

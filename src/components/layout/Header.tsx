@@ -49,12 +49,12 @@ export const Header = () => {
   return (
     <motion.nav
       className={clsx(
-        "backdrop-blur z-50 fixed top-0 w-full h-14 bg-gradient-to-r from-primary-700 to-black to-70% "
+        "backdrop-blur z-50 fixed top-0 w-full h-14 "
         // `to-[${scrollYProgress}]`
       )}
       initial={{ opacity: 0.8 }}
       style={{
-        background: `linear-gradient(to right, #000 ${currentScrollYProgress}%,  #01303f  ,#02577a  )`,
+        background: `linear-gradient(to right, #000 ${currentScrollYProgress}%,  #01303f  , #02577a  )`,
       }}
       // style={{gradientColorStopPositions:currentScrollYProgress}}
       animate={isShowHeader ? { opacity: 1 } : { opacity: 0.8 }}
@@ -86,7 +86,7 @@ export const Header = () => {
               e.preventDefault();
               setShowMenu(!showMenu);
             }}
-            whileHover={{ scale: 1.2 }}
+            // whileHover={{ scale: 1.2 }}
           >
             <SettingIcon />
           </motion.button>
@@ -95,13 +95,13 @@ export const Header = () => {
         </motion.div>
       </div>
 
-      <motion.div
+      {/* <motion.div
         className="absolute bottom-0 w-full h-1   left-0  "
         style={{
           width: `${currentScrollYProgress}%`,
           background: `linear-gradient(to right, #fff ${currentScrollYProgress}%, #d4f0fc , #89d6fb  )`,
         }}
-      />
+      /> */}
     </motion.nav>
   );
 };

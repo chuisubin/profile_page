@@ -8,9 +8,9 @@ const nextConfig = {
     });
     return config;
   },
-  experimental: {
-    windowHistorySupport: true,
-  },
+  // experimental: {
+  //   windowHistorySupport: true,
+  // },
 };
 
 module.exports = nextConfig;
