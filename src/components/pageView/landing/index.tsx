@@ -91,14 +91,17 @@ export const Landing = () => {
                 <SpotlightCard>
                   <div className="  ">
                     <ProfileIcon />
-                    <div className="mb-8">
-                      <TypeTextView
-                        baseText={t("intro")}
-                        delay={1}
-                        duration={2}
-                        cursorClassName="bg-primary-700 dark:bg-white"
-                        className="text-4xl font-COOL text-primary-700 dark:text-white"
-                      />
+                    <div className="mb-8 text-center relative">
+                      <div className="absolute top-0 left-0">
+                        <TypeTextView
+                          baseText={t("intro")}
+                          delay={0.5}
+                          duration={2.5}
+                          cursorClassName="bg-primary-700 dark:bg-white"
+                          className="text-4xl font-COOL text-primary-700 dark:text-white "
+                        />
+                      </div>
+                      <div className="   invisible text-4xl">{t("intro")}</div>
                     </div>
                     <motion.div ref={anchorRef}>
                       <OptionList onClickOption={onClickOption} />

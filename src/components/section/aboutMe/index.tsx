@@ -6,11 +6,12 @@ import { CustomDialog } from "@/components/common/CustomDialog";
 import { SkillGame } from "../skillGame";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-
+import data from "@data";
 export const AboutMe = () => {
   const { t } = useTranslation();
-  const { lng } = useParams();
-  const [openModel, setOpenModel] = useState<boolean>(false);
+  const { lng, params } = useParams();
+
+  const skillSetData = data.getData(lng).skillSet;
 
   const numberCardData = useMemo(() => {
     return [
@@ -22,29 +23,6 @@ export const AboutMe = () => {
         number: 4,
         label: "expensive year",
       },
-      { number: 181, label: "cm tall" },
-    ];
-  }, []);
-
-  const skillSetData = useMemo(() => {
-    return [
-      { label: "React", Level: 100 },
-      {
-        label: "Next.js",
-        Level: 100,
-      },
-      {
-        label: "Node.js",
-        Level: 100,
-      },
-      { label: "TypeScript", Level: 100 },
-      { label: "JavaScript", Level: 100 },
-      { label: "HTML", Level: 100 },
-      { label: "CSS", Level: 100 },
-      { label: "TailwindCSS", Level: 100 },
-      { label: "Framer Motion", Level: 100 },
-      { label: "Git", Level: 100 },
-      { label: "Vue", Level: 100 },
     ];
   }, []);
 
@@ -68,29 +46,31 @@ export const AboutMe = () => {
             <motion.div className=" bg-primary-700 dark:bg-white my-2 h-1" />
           </motion.div>
 
-          <div className="flex flex-col gap-4 lg:flex-row ">
-            <div className=" whitespace-normal">{t("aboutMe.intro")}</div>
+          <div className="flex flex-col  ">
+            <div className=" whitespace-normal mb-4">{t("aboutMe.intro")}</div>
 
-            <div>
+            <div className="mb-4 border border-white">
               <Link href={`${lng}/game`}>to Game Page</Link>
             </div>
-            <div
-              className=" flex flex-row flex-wrap TODO "
-              onClick={() => {
-                setOpenModel(true);
-              }}
-            >
+
+            <h1 className=" mb-2 text-3xl font-bold">
+              {t("aboutMe.mySkills")}
+            </h1>
+            <div className=" flex flex-row flex-wrap   gap-4 mb-4">
               {skillSetData.map((data, index) => {
                 return (
-                  <div className=" border border-white p-2 " key={index}>
-                    {data.label}
+                  <div
+                    className=" border-2  dark:border-white border-primary-700 px-4 py-1  rounded-md"
+                    key={index}
+                  >
+                    {data.title}
                   </div>
                 );
               })}
             </div>
           </div>
 
-          <div className="flex flex-row flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-row flex-wrap items-center justify-between gap-4 mb-4">
             {numberCardData.map((data, index) => {
               return (
                 <motion.div
@@ -106,7 +86,7 @@ export const AboutMe = () => {
             })}
           </div>
 
-          <div className="flex flex-row flex-wrap">
+          <div className="flex flex-row flex-wrap ">
             <div>
               contact
               <div>tel: 4</div>

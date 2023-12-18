@@ -23,9 +23,10 @@ export const Menu = (props: {}) => {
 
   return (
     <motion.div
-      initial={{ height: 0, y: 100 }}
+      initial={{ height: 0, opacity: 0 }}
       // exit={{scaleY:0}}
-      animate={{ scale: 1, height: "auto", y: 0 }}
+      transition={{ duration: 0.2 }}
+      animate={{ height: "auto", opacity: 1 }}
       className="text-primary-700 dark:text-white bg-white/70 dark:bg-black/70  overflow-hidden absolute right-0   top-full  rounded-lg  "
     >
       <div className="w-full h-full absolute blur-lg   z-0" />
@@ -33,8 +34,8 @@ export const Menu = (props: {}) => {
       <div className="flex flex-col   items-start z-10 px-4 gap-4 py-4">
         <motion.div
           className="flex flex-row justify-start  items-center  flex-nowrap gap-1"
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          // initial={{ y: "100%", opacity: 0 }}
+          // animate={{ y: 0, opacity: 1 }}
         >
           {/* <span className="whitespace-nowrap">{t("darkmode")}:</span> */}
           <motion.div
@@ -51,8 +52,8 @@ export const Menu = (props: {}) => {
         </motion.div>
         <motion.div
           className="flex flex-row justify-start  items-center  flex-nowrap gap-1"
-          initial={{ y: "100%", opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+          // initial={{ y: "100%", opacity: 0 }}
+          // animate={{ y: 0, opacity: 1 }}
         >
           <motion.div
             className=" cursor-pointer transition-all flex flex-row items-center  flex-nowrap whitespace-nowrap"

@@ -83,65 +83,66 @@ export const OptionList = (props: OptionListType) => {
   }, [t]);
 
   return (
-    <motion.div
-      initial={{ display: "none" }}
-      animate={{ display: "flex" }}
-      transition={{ delay: 3, duration: 1 }}
-      className={clsx(
-        "hidden  w-full  flex-col text-primary-700 dark:text-white   items-start justify-start gap-4 relative"
-      )}
-    >
-      {optionListData.map((data, index) => {
-        const isCurrentSelected =
-          currentSelected && index + 1 == currentSelected ? true : false;
-        return (
-          <motion.div
-            key={index}
-            onHoverEnd={() => {
-              setCurrentSelected(null);
-            }}
-            onHoverStart={() => {
-              setCurrentSelected(index + 1);
-            }}
-            className={clsx(
-              "flex flex-row items-center gap-2 transition-all",
-              isCurrentSelected && "scale-105 bg-secondary-500  px-2 "
-            )}
-          >
-            <OptionItem
-              clickHandle={() => {
-                const section = document.querySelector(data.id);
-                section &&
-                  section.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+    <div className=" relative">
+      <motion.div
+        animate={{ display: "flex" }}
+        transition={{ delay: 3, duration: 1 }}
+        className={clsx(
+          " w-full  flex-col text-primary-700 dark:text-white   items-start justify-start gap-4 relative"
+        )}
+      >
+        {optionListData.map((data, index) => {
+          const isCurrentSelected =
+            currentSelected && index + 1 == currentSelected ? true : false;
+          return (
+            <motion.div
+              key={index}
+              onHoverEnd={() => {
+                setCurrentSelected(null);
               }}
+              onHoverStart={() => {
+                setCurrentSelected(index + 1);
+              }}
+              className={clsx(
+                "flex flex-row items-center gap-2 transition-all",
+                isCurrentSelected && "scale-105 bg-secondary-500  px-2 "
+              )}
             >
-              <TypeTextView
-                baseText={data.label}
-                delay={data.delay}
-                duration={data.duration}
-                cursorClassName="bg-white"
-                className={clsx(
-                  " text-4xl font-COOL ",
-                  isCurrentSelected
-                    ? " text-white"
-                    : "text-primary-700 dark:text-white"
-                )}
-              />
-            </OptionItem>
-
-            {isCurrentSelected && (
-              <motion.div className="w-6 h-6 transition-colors ">
-                <PlayIcon
-                  className={clsx(" rotate-180 w-full h-full  fill-white ")}
+              <OptionItem
+                clickHandle={() => {
+                  const section = document.querySelector(data.id);
+                  section &&
+                    section.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                }}
+              >
+                <TypeTextView
+                  baseText={data.label}
+                  delay={data.delay}
+                  duration={data.duration}
+                  cursorClassName="dark:bg-white bg-primary-700"
+                  className={clsx(
+                    " text-4xl font-COOL ",
+                    isCurrentSelected
+                      ? " text-white"
+                      : "text-primary-700 dark:text-white"
+                  )}
                 />
-              </motion.div>
-            )}
-          </motion.div>
-        );
-      })}
-    </motion.div>
+              </OptionItem>
+
+              {isCurrentSelected && (
+                <motion.div className="w-6 h-6 transition-colors ">
+                  <PlayIcon
+                    className={clsx(" rotate-180 w-full h-full  fill-white ")}
+                  />
+                </motion.div>
+              )}
+            </motion.div>
+          );
+        })}
+      </motion.div>
+    </div>
   );
 };

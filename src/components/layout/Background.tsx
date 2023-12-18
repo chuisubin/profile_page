@@ -7,6 +7,7 @@ import { useDarkMode } from "@/hook/useDarkModeHook";
 import type { ISourceOptions, Engine } from "tsparticles-engine";
 import { loadSlim } from "tsparticles-slim";
 import Image from "next/image";
+import { isMobile } from "react-device-detect";
 
 const Particle = () => {
   const { isDarkMode } = useDarkMode();
@@ -81,7 +82,7 @@ const Particle = () => {
             },
           },
           size: {
-            value: 12,
+            value: isMobile ? 8 : 12,
             // {
 
             //     min:12,

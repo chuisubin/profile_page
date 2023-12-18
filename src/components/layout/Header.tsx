@@ -16,7 +16,7 @@ export const Header = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   const { t } = useTranslation();
-  const { isShowHeader, currentScrollYProgress, scrollYProgress } = useLayout();
+  const { currentScrollYProgress, scrollYProgress } = useLayout();
 
   const optionList = useMemo(() => {
     return [
@@ -46,62 +46,59 @@ export const Header = () => {
   };
   useOnClickOutside(menuRef, handleClickOutsideMenu);
 
-  return (
-    <motion.nav
-      className={clsx(
-        "backdrop-blur z-50 fixed top-0 w-full h-14 "
-        // `to-[${scrollYProgress}]`
-      )}
-      initial={{ opacity: 0.8 }}
-      style={{
-        background: `linear-gradient(to right, #000 ${currentScrollYProgress}%,  #01303f  , #02577a  )`,
-      }}
-      // style={{gradientColorStopPositions:currentScrollYProgress}}
-      animate={isShowHeader ? { opacity: 1 } : { opacity: 0.8 }}
-      transition={{ duration: 0.3 }}
-    >
-      <div className="mx-auto h-full container flex flex-row items-center justify-between w-full   px-4 ">
-        <div className=" flex flex-row items-center  gap-10 ">
-          <Link href="/">
-            <div className="text-white">H</div>
-          </Link>
-
-          {optionList.map((data, index) => {
-            return (
-              <motion.div
-                className="cursor-pointer text-white"
-                key={index}
-                onClick={data.onClick}
-              >
-                {data.name}
-              </motion.div>
-            );
-          })}
-        </div>
-        <motion.div className="   relative rounded-full   " ref={menuRef}>
-          <motion.button
-            className="p-1  w-8 h-8 rounded-full shadow-xl shadow-primary-500"
-            style={{ rotate: Number(currentScrollYProgress) * 3.6 }}
-            onClick={(e) => {
-              e.preventDefault();
-              setShowMenu(!showMenu);
-            }}
-            // whileHover={{ scale: 1.2 }}
-          >
-            <SettingIcon />
-          </motion.button>
-
-          {showMenu && <Menu />}
-        </motion.div>
+  const NavBtn = ({ label }: { label: string }) => {
+    return (
+      <div
+        className={clsx(
+          " cursor-pointer px-4 py-1 rounded-md text-white bg-transparent hover:bg-white hover:text-secondary-500",
+          "dark:hover:bg-secondary-400 dark:hover:text-black"
+        )}
+      >
+        {label}
       </div>
-
-      {/* <motion.div
-        className="absolute bottom-0 w-full h-1   left-0  "
+    );
+  };
+  return (
+    <div className="fixed top-0 w-full z-50 ">
+      <motion.nav
+        className={clsx(
+          "backdrop-blur z-50 relative  w-fit rounded-md  mx-auto mt-4 h-14 shadow-lg  shadow-black opacity-90"
+        )}
         style={{
-          width: `${currentScrollYProgress}%`,
-          background: `linear-gradient(to right, #fff ${currentScrollYProgress}%, #d4f0fc , #89d6fb  )`,
+          background: `linear-gradient(to right, #000 ${currentScrollYProgress}%,  #01303f  ,#02577a)`,
         }}
-      /> */}
-    </motion.nav>
+        transition={{ duration: 0.3 }}
+      >
+        <div className="mx-auto h-full container flex flex-row items-center justify-center w-fit gap-2  px-4 ">
+          <div className=" flex flex-row items-center  gap-2 ">
+            <Link href="/">
+              <NavBtn label="home" />
+            </Link>
+            {optionList.map((data, index) => {
+              return (
+                <motion.div key={index} onClick={data.onClick}>
+                  <NavBtn label={data.name} />
+                </motion.div>
+              );
+            })}
+          </div>
+          <motion.div className="   relative rounded-full   " ref={menuRef}>
+            <motion.button
+              className="p-1  w-8 h-8 rounded-full shadow-xl shadow-primary-500"
+              style={{ rotate: Number(currentScrollYProgress) * 3.6 }}
+              onClick={(e) => {
+                e.preventDefault();
+                setShowMenu(!showMenu);
+              }}
+              // whileHover={{ scale: 1.2 }}
+            >
+              <SettingIcon />
+            </motion.button>
+
+            {showMenu && <Menu />}
+          </motion.div>
+        </div>
+      </motion.nav>
+    </div>
   );
 };
