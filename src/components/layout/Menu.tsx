@@ -50,13 +50,11 @@ export const Menu = (props: {}) => {
             </span>
           </motion.div>
         </motion.div>
-        <motion.div
+        {/* <motion.div
           className="flex flex-row justify-start  items-center  flex-nowrap gap-1"
-          // initial={{ y: "100%", opacity: 0 }}
-          // animate={{ y: 0, opacity: 1 }}
         >
           <motion.div
-            className=" cursor-pointer transition-all flex flex-row items-center  flex-nowrap whitespace-nowrap"
+            className=" cursor-pointer transition-all flex flex-row items-center  flex-nowrap whitespace-nowrap z-10"
             whileTap={{ scale: 0.8 }}
             onClick={() => {
               i18n.changeLanguage(i18n.language === "en" ? "zh-Hant" : "en");
@@ -71,7 +69,7 @@ export const Menu = (props: {}) => {
               {i18n.language === "en" ? "English" : "中文"}
             </span>
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

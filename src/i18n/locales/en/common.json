@@ -4,7 +4,8 @@
   "off": "Off",
   "intro": "Hello World! My Name is Angus and a Front-end Developer. Welcome to my website.",
   "option": {
-    "aboutMe": "About me",
+    "home": "Home",
+    "about": "About",
     "job": "Job",
     "project": "Project"
   },

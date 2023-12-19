@@ -22,19 +22,12 @@ const cursorVariants = {
   },
 };
 
-export const OptionItem = (props: {
-  clickHandle: () => void;
-  children: React.ReactNode;
-}) => {
-  const { clickHandle, children } = props;
-  //   infoRef?.current?.scrollIntoView({ behavior: "smooth" })
+export const OptionItem = (props: { children: React.ReactNode }) => {
+  const { children } = props;
   return (
-    <motion.button
-      onClick={() => clickHandle()}
-      className={clsx("whitespace-nowrap  hidden delayShow ")}
-    >
+    <motion.div className={clsx("whitespace-nowrap  hidden delayShow ")}>
       {children}
-    </motion.button>
+    </motion.div>
   );
 };
 
@@ -48,13 +41,13 @@ export const OptionList = (props: OptionListType) => {
       {
         display: ["none", "block"],
         opacity: [0, 1],
-        scale: 1,
+        // scale: 1,
         filter: "blur(0px)",
       },
       {
         duration: 1,
 
-        delay: stagger(1, { startDelay: 4 }),
+        delay: stagger(1, { startDelay: 2 }),
       }
     );
   }, []);
@@ -62,19 +55,19 @@ export const OptionList = (props: OptionListType) => {
   const optionListData = useMemo(() => {
     return [
       {
-        delay: 4,
-        label: t("option.aboutMe"),
+        delay: 2,
+        label: t("option.about"),
         duration: 1,
-        id: "#about_me",
+        id: "#about",
       },
       {
-        delay: 5,
+        delay: 3,
         label: t("option.job"),
         duration: 1,
         id: "#job",
       },
       {
-        delay: 6,
+        delay: 4,
         label: t("option.project"),
         duration: 1,
         id: "#project",
@@ -83,20 +76,19 @@ export const OptionList = (props: OptionListType) => {
   }, [t]);
 
   return (
-    <div className=" relative">
-      <motion.div
-        animate={{ display: "flex" }}
-        transition={{ delay: 3, duration: 1 }}
-        className={clsx(
-          " w-full  flex-col text-primary-700 dark:text-white   items-start justify-start gap-4 relative"
-        )}
-      >
-        {optionListData.map((data, index) => {
-          const isCurrentSelected =
-            currentSelected && index + 1 == currentSelected ? true : false;
-          return (
+    <motion.div
+      animate={{ display: "flex" }}
+      // transition={{ delay: 3, duration: 1 }}
+      className={clsx(
+        " w-full  flex-col  text-primary-700 dark:text-white   items-start gap-4 relative  TODO"
+      )}
+    >
+      {optionListData.map((data, index) => {
+        const isCurrentSelected =
+          currentSelected && index + 1 == currentSelected ? true : false;
+        return (
+          <div key={index} className=" relative">
             <motion.div
-              key={index}
               onHoverEnd={() => {
                 setCurrentSelected(null);
               }}
@@ -104,20 +96,19 @@ export const OptionList = (props: OptionListType) => {
                 setCurrentSelected(index + 1);
               }}
               className={clsx(
-                "flex flex-row items-center gap-2 transition-all",
-                isCurrentSelected && "scale-105 bg-secondary-500  px-2 "
+                " cursor-pointer flex-1 flex flex-row justify-center items-center gap-2 transition-all px-2",
+                isCurrentSelected && " bg-secondary-500   "
               )}
+              onClick={() => {
+                const section = document.querySelector(data.id);
+                section &&
+                  section.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                  });
+              }}
             >
-              <OptionItem
-                clickHandle={() => {
-                  const section = document.querySelector(data.id);
-                  section &&
-                    section.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                }}
-              >
+              <OptionItem>
                 <TypeTextView
                   baseText={data.label}
                   delay={data.delay}
@@ -132,17 +123,20 @@ export const OptionList = (props: OptionListType) => {
                 />
               </OptionItem>
 
-              {isCurrentSelected && (
-                <motion.div className="w-6 h-6 transition-colors ">
-                  <PlayIcon
-                    className={clsx(" rotate-180 w-full h-full  fill-white ")}
-                  />
-                </motion.div>
-              )}
+              <motion.div
+                className={clsx(
+                  "w-6 h-6 transition-colors ",
+                  isCurrentSelected ? "visible " : "invisible  "
+                )}
+              >
+                <PlayIcon
+                  className={clsx(" rotate-180 w-full h-full  fill-white ")}
+                />
+              </motion.div>
             </motion.div>
-          );
-        })}
-      </motion.div>
-    </div>
+          </div>
+        );
+      })}
+    </motion.div>
   );
 };

@@ -23,6 +23,11 @@ font-family: 'Noto Sans HK', sans-serif;
   }
 }
 
+
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   // color: rgb(var(--foreground-rgb));
   // background: linear-gradient(
@@ -31,7 +36,7 @@ body {
   //     rgb(var(--background-end-rgb))
   //   )
   //   rgb(var(--background-start-rgb));
-
+  scroll-behavior: smooth;
     @apply
     relative  h-auto
     font-COOL
@@ -113,7 +118,8 @@ body {
 //     absolute top-0 bottom-0 left-0  right-0
 // }
 
+.info_card{
 
-
-
+   @apply aspect-square bg-white flex flex-col justify-center items-center
+}
 
