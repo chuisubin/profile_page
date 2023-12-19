@@ -14,8 +14,6 @@ import SunIcon from "@public/images/sun.svg";
 import MoonIcon from "@public/images/moon.svg";
 
 export const Header = () => {
-  const menuRef = useRef(null);
-  const [showMenu, setShowMenu] = useState<boolean>(false);
   const { lng } = useParams();
   const { t } = useTranslation();
   const { currentScrollYProgress, scrollYProgress } = useLayout();
@@ -36,12 +34,12 @@ export const Header = () => {
         onClick: () => onClickOption("#about"),
       },
       {
-        name: t("option.job"),
-        onClick: () => onClickOption("#job"),
-      },
-      {
         name: t("option.project"),
         onClick: () => onClickOption("#project"),
+      },
+      {
+        name: t("option.experience"),
+        onClick: () => onClickOption("#experience"),
       },
     ];
   }, [t]);
@@ -50,11 +48,6 @@ export const Header = () => {
     const section = document.querySelector(id);
     section && section.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
-  const handleClickOutsideMenu = () => {
-    setShowMenu(false);
-  };
-  useOnClickOutside(menuRef, handleClickOutsideMenu);
 
   const NavBtn = ({ label }: { label: string }) => {
     return (

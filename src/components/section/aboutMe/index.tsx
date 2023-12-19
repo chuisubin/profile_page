@@ -11,10 +11,13 @@ import Image from "next/image";
 import { SkillView } from "./SkillView";
 import { InfoView } from "./InfoView";
 import { SectionTitleView } from "@/components/common/SectionTitleView";
+import { Infomation } from "./Information";
 
 export const AboutMe = () => {
   const { t } = useTranslation();
   const { lng, params } = useParams();
+
+  const [openModal, setOpenModal] = useState(false);
 
   const numberCardData = useMemo(() => {
     return [
@@ -41,7 +44,7 @@ export const AboutMe = () => {
           <SectionTitleView title={t("aboutMe.title")} />
 
           <div className="flex flex-col  ">
-            <div className=" flex flex-row flex-wrap  ">
+            <div className=" flex flex-row flex-wrap  mb-4 ">
               <div className=" whitespace-normal mb-4 flex-1">
                 {t("aboutMe.intro")}
               </div>
@@ -51,37 +54,24 @@ export const AboutMe = () => {
               </div>
             </div>
 
-            <div className="mb-4 border border-white">
-              <Link href={`${lng}/game`}>to Game Page</Link>
-            </div>
-
             <SkillView />
+            {/* <div
+              className="mb-4 cursor-pointer w-fit "
+              onClick={() => setOpenModal(true)}
+            >
+              to Game Page
+            </div> */}
           </div>
 
-          <div className="flex flex-row flex-wrap items-center justify-between gap-4 mb-4">
-            {numberCardData.map((data, index) => {
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  transition={{ delay: index + 1, duration: 1 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  className=""
-                >
-                  <NumberCard number={data.number} label={data.label} />
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <div className="flex flex-row flex-wrap ">
-            <div>
-              contact
-              <div>tel: 4</div>
-            </div>
-          </div>
+          <Infomation />
         </motion.div>
       </div>
+
+      {openModal && (
+        <CustomDialog close={() => setOpenModal(false)}>
+          <SkillGame />
+        </CustomDialog>
+      )}
     </>
   );
 };

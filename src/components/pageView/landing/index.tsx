@@ -22,7 +22,7 @@ import { useTranslation } from "@/i18n/client";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import clsx from "clsx";
 import { AboutMe } from "@/components/section/aboutMe";
-import { Job } from "@/components/section/job";
+import { Experience } from "@/components/section/Experience";
 import { Project } from "@/components/section/project";
 import { useLayout } from "@/hook/useLayoutHook";
 import { Home } from "@/components/section/Home";
@@ -30,12 +30,12 @@ import { Home } from "@/components/section/Home";
 const SectionDiv = ({ children }: { children: ReactElement }) => {
   return (
     <motion.div
-      initial={{ opacity: 0.8 }}
-      whileInView={{ opacity: 1 }}
-      exit={{ opacity: 0.8 }}
+      // initial={{ opacity: 0.8 }}
+      // whileInView={{ opacity: 1 }}
+      // exit={{ opacity: 0.8 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.8 }}
-      className="relative w-full min-h-screen pt-20  overflow-x-hidden"
+      className="relative w-full min-h-screen pt-20  overflow-x-hidden   "
     >
       {children}
     </motion.div>
@@ -46,7 +46,7 @@ export const Landing = () => {
   // const { lng } = useParams();
   const { t } = useTranslation();
   const aboutRef = useRef<HTMLDivElement>(null);
-  const jobRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
 
@@ -57,7 +57,7 @@ export const Landing = () => {
       });
     }
     if (index == 1) {
-      jobRef.current?.scrollIntoView({
+      experienceRef.current?.scrollIntoView({
         behavior: "smooth",
       });
     }
@@ -91,22 +91,21 @@ export const Landing = () => {
           </SectionDiv>
         </div>
 
-        <div ref={jobRef} id={"job"} className=" ">
-          <SectionDiv>
-            <SpotlightCard>
-              <div>
-                <Job />
-              </div>{" "}
-            </SpotlightCard>
-          </SectionDiv>
-        </div>
-
         <div ref={projectRef} id={"project"}>
           <SectionDiv>
             <SpotlightCard>
               <div>
                 <Project />
               </div>
+            </SpotlightCard>
+          </SectionDiv>
+        </div>
+        <div ref={experienceRef} id={"experience"} className=" ">
+          <SectionDiv>
+            <SpotlightCard>
+              <div>
+                <Experience />
+              </div>{" "}
             </SpotlightCard>
           </SectionDiv>
         </div>

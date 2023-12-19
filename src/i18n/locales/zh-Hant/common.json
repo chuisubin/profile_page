@@ -5,16 +5,21 @@
   "intro": "Hello World! My Name is Angus and a Front-end Developer. Welcome to my website.",
   "option": {
     "aboutMe": "About me",
-    "job": "Job",
+    "experience": "Experience",
     "project": "Project"
   },
   "aboutMe": {
     "title": "About me",
     "intro": "Hello, I'm Angus. I'm a front-end developer with 4 years of experience. I enjoy building sites and apps. I focus is React(Next js).",
     "mySkills": "My Skills",
-    "downloadCV": "Download CV"
+    "downloadCV": "Download CV",
+    "name": "Name",
+
+    "birthday": "Birthday",
+    "tel": "Tel",
+    "email": "Email"
   },
-  "job": {
-    "title": "Job"
+  "experience": {
+    "title": "Experience"
   }
 }

@@ -62,9 +62,9 @@ export const OptionList = (props: OptionListType) => {
       },
       {
         delay: 3,
-        label: t("option.job"),
+        label: t("option.experience"),
         duration: 1,
-        id: "#job",
+        id: "#experience",
       },
       {
         delay: 4,
@@ -80,7 +80,7 @@ export const OptionList = (props: OptionListType) => {
       animate={{ display: "flex" }}
       // transition={{ delay: 3, duration: 1 }}
       className={clsx(
-        " w-full  flex-col  text-primary-700 dark:text-white   items-start gap-4 relative  TODO"
+        " w-full  flex-col  text-primary-700 dark:text-white   items-start gap-4 relative  "
       )}
     >
       {optionListData.map((data, index) => {

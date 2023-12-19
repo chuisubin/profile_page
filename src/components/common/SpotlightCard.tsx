@@ -29,17 +29,17 @@ export const SpotlightCard = (props: { children: React.ReactNode }) => {
 
   return (
     <div
-      className="relative  group   bg-white/50 dark:bg-primary-700/30 "
+      className="relative  group   bg-white/30 dark:bg-primary-700/30 shadow rounded-md  z-10"
       onMouseMove={mouseMoveHandle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute  backdrop-blur  w-full h-full -z-10" />
+      <div className="absolute  backdrop-blur  w-full h-full " />
       {/* <div  className="spotlight-shadow"/> */}
 
       <motion.div
         className={clsx(
-          "top-0 bottom-0 right-0 left-0  absolute  pointer-events-none   ",
+          "top-0 bottom-0 right-0 left-0  absolute  pointer-events-none  rounded-md  ",
           "group-hover:opacity-100 opacity-0 "
         )}
         style={{
