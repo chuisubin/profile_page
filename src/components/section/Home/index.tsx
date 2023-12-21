@@ -4,14 +4,18 @@ import { OptionList } from "@/components/section/Home/OptionList";
 import { ProfileIcon } from "@/components/section/Home/ProfileIcon";
 import { useLayout } from "@/hook/useLayoutHook";
 import { useTranslation } from "@/i18n/client";
+import clsx from "clsx";
 import { motion } from "framer-motion";
-
+import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
+import GithubIcon from "@public/images/github.svg";
+import LinkedInIcon from "@public/images/linkedin.svg";
+import data from "@data";
 type HomeType = {
   onClickOption: (index: number) => void;
 };
 export const Home = (props: HomeType) => {
   const { t } = useTranslation();
-
+  const infoData = data.getData("en").information;
   const { onClickOption } = props;
   const {} = useLayout();
 
@@ -40,11 +44,42 @@ export const Home = (props: HomeType) => {
               <OptionList onClickOption={onClickOption} />
             </motion.div>
 
-            <div className=" flex flex-row flex-wrap  gap-4">
-              <div>download cv</div>
-              <div>git link</div>
-              <div>linkIm </div>
-            </div>
+            <motion.div
+              className=" mx-auto w-auto flex flex-row    gap-4 h-10"
+              initial={{ opacity: 0, x: "100%" }}
+              animate={{ opacity: 1, x: "0%" }}
+              transition={{ duration: 1, delay: 1 }}
+            >
+              <button
+                className={clsx(
+                  "flex-nowrap h-full transition-all items-center flex flex-row rounded-3xl   px-4  dark:bg-secondary-400 dark:text-black text-white bg-secondary-500  active:scale-95 hover:scale-105"
+                )}
+              >
+                <span className="text-lg whitespace-nowrap leading-normal ">
+                  {t("downloadCV")}
+                </span>
+                <ArrowDownTrayIcon className=" ml-1 w-5 h-5" />
+              </button>
+              <button
+                className=" transition-all h-full  aspect-square flex  items-center justify-center bg-white rounded-full hover:scale-105 active:scale-95 "
+                title={"Github"}
+                onClick={() => {
+                  window.open(infoData.github, "_blank");
+                }}
+              >
+                <GithubIcon className={clsx("w-5 h-5")} />
+              </button>
+
+              <button
+                className="transition-all h-full  aspect-square flex  items-center justify-center bg-white rounded-full hover:scale-105 active:scale-95 "
+                title={"LinkedIn"}
+                onClick={() => {
+                  window.open(infoData.linkedIn, "_blank");
+                }}
+              >
+                <LinkedInIcon className={clsx("w-5 h-5")} />
+              </button>
+            </motion.div>
           </div>
         </div>
       </motion.div>

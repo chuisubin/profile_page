@@ -11,7 +11,7 @@ export const SkillView = () => {
   const skillSetData = data.getData(lng).skillSet;
 
   return (
-    <div className="">
+    <div className=" ">
       <h1 className=" mb-2 text-3xl font-bold text-center">
         {t("aboutMe.mySkills")}
       </h1>
@@ -19,7 +19,7 @@ export const SkillView = () => {
         {skillSetData.map((item, index) => {
           return (
             <div
-              className="flex flex-row items-center border-2  dark:border-white border-primary-700 px-4 py-1  rounded-md"
+              className="flex flex-row items-center border-2 bg-white dark:bg-primary-700 dark:text-white dark:border-white border-primary-700 px-4 py-1  rounded-md"
               key={index}
             >
               {/* <div className="w-20 h-10">

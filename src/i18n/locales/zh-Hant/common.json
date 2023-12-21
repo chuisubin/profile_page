@@ -3,21 +3,23 @@
   "on": "開啟",
   "off": "關閉",
   "intro": "Hello World! My Name is Angus and a Front-end Developer. Welcome to my website.",
+  "downloadCV": "Download CV",
   "option": {
+    "home": "Home",
     "aboutMe": "About me",
     "experience": "Experience",
     "project": "Project"
   },
   "aboutMe": {
     "title": "About me",
-    "intro": "Hello, I'm Angus. I'm a front-end developer with 4 years of experience. I enjoy building sites and apps. I focus is React(Next js).",
     "mySkills": "My Skills",
     "downloadCV": "Download CV",
     "name": "Name",
 
-    "birthday": "Birthday",
+    "bornIn": "Born In",
     "tel": "Tel",
-    "email": "Email"
+    "email": "Email",
+    "address": "Address"
   },
   "experience": {
     "title": "Experience"

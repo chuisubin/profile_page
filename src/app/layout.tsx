@@ -5,8 +5,6 @@ import { NextResponse } from "next/server";
 import { DarkModeProvider } from "@/hook/useDarkModeHook";
 import { LayoutProvider } from "@/hook/useLayoutHook";
 
-
-
 export default function RootLayout({
   children,
 }: {
@@ -15,6 +13,7 @@ export default function RootLayout({
   return (
     <html>
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         {/* <link
@@ -22,19 +21,20 @@ export default function RootLayout({
           rel="stylesheet"
         /> */}
 
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com"  />
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Montserrat:wght@400;800&family=Noto+Sans+HK&display=swap" rel="stylesheet" />
-<link href="https://fonts.cdnfonts.com/css/binary" rel="stylesheet" />
-
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&family=Montserrat:wght@400;800&family=Noto+Sans+HK&display=swap"
+          rel="stylesheet"
+        />
+        <link href="https://fonts.cdnfonts.com/css/binary" rel="stylesheet" />
       </head>
-      
+
       <body>
-      <DarkModeProvider>
-        <LayoutProvider >
-        {children}
-        </LayoutProvider>
-        </DarkModeProvider></body>
+        <DarkModeProvider>
+          <LayoutProvider>{children}</LayoutProvider>
+        </DarkModeProvider>
+      </body>
     </html>
   );
 }
