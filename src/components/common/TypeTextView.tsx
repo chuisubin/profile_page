@@ -91,7 +91,7 @@ export const TypeTextView = ({
           variants={cursorVariants}
           animate="blinking"
           className={clsx(
-            "inline-block  h-6 w-[4px] translate-y-1 bg-slate-900 ",
+            "inline-block  h-4 lg:h-6  w-[2px] lg:w-[4px] translate-y-1 bg-slate-900 ",
             cursorClassName
           )}
         />

@@ -17,7 +17,7 @@ export const ProfileIcon = () => {
         transition={{ duration: 2 }}
         className=" absolute top-1/2  left-0  bg-secondary-500 dark:bg-white h-1"
       />
-      <div className="rounded-full overflow-hidden w-32 h-32   relative  border-8 border-secondary-500 dark:border-white  ">
+      <div className="rounded-full overflow-hidden w-24 h-24 lg:w-32 lg:h-32   relative  border-4 lg:border-8 border-secondary-500 dark:border-white  ">
         <Image
           alt={"angus chui"}
           width={200}

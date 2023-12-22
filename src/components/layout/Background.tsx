@@ -115,7 +115,7 @@ const Particle = () => {
                 },
               },
               size: {
-                value: isMobile ? 8 : 12,
+                value: isMobile ? 8 : 14,
               },
             },
             fullScreen: {

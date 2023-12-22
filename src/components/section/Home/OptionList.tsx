@@ -80,7 +80,7 @@ export const OptionList = (props: OptionListType) => {
       animate={{ display: "flex" }}
       // transition={{ delay: 3, duration: 1 }}
       className={clsx(
-        " w-full  flex-col  text-primary-700 dark:text-white   items-start gap-4 relative  "
+        " w-full  flex-col  text-primary-700 dark:text-white   items-start  gap-3 lg:gap-4 relative  "
       )}
     >
       {optionListData.map((data, index) => {
@@ -115,7 +115,7 @@ export const OptionList = (props: OptionListType) => {
                   duration={data.duration}
                   cursorClassName="dark:bg-white bg-primary-700"
                   className={clsx(
-                    " text-4xl font-COOL ",
+                    "text-xl md:text-2xl lg:text-4xl font-COOL ",
                     isCurrentSelected
                       ? " text-white"
                       : "text-primary-700 dark:text-white"
@@ -125,7 +125,7 @@ export const OptionList = (props: OptionListType) => {
 
               <motion.div
                 className={clsx(
-                  "w-6 h-6 transition-colors ",
+                  "lg:w-6 lg:h-6 w-4 h-4 transition-colors ",
                   isCurrentSelected ? "visible " : "invisible  "
                 )}
               >

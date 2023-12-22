@@ -6,7 +6,7 @@ import clsx from "clsx";
 export const InfoView = () => {
   return (
     <div className=" flex flex-col items-center justify-center">
-      <div className=" max-w-xs TODO ">
+      <div className="max-w-[14rem] lg:max-w-xs  ">
         <Swiper
           effect={"cards"}
           grabCursor={true}
@@ -14,11 +14,11 @@ export const InfoView = () => {
           className={clsx("mySwiper    ")}
         >
           <SwiperSlide className="  info_card">
-            <div>Phone: 2</div>
+            <div>靚仔相</div>
           </SwiperSlide>
-          <SwiperSlide className=" info_card">Slide 2</SwiperSlide>
-          <SwiperSlide className=" info_card">Slide 3</SwiperSlide>
-          <SwiperSlide className=" info_card">Slide 4</SwiperSlide>
+          <SwiperSlide className=" info_card">靚仔相</SwiperSlide>
+          <SwiperSlide className=" info_card">靚仔相</SwiperSlide>
+          <SwiperSlide className=" info_card">靚仔相</SwiperSlide>
         </Swiper>
       </div>
     </div>
