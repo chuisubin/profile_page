@@ -35,7 +35,7 @@ const SectionDiv = ({ children }: { children: ReactElement }) => {
       // exit={{ opacity: 0.8 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true, amount: 0.8 }}
-      className="relative w-full min-h-screen pt-20  overflow-x-hidden   "
+      className="relative w-full min-h-screen pt-16 lg:pt-20  overflow-x-hidden   "
     >
       {children}
     </motion.div>
@@ -69,7 +69,7 @@ export const Landing = () => {
   };
 
   return (
-    <div className=" relative w-full  px-5 lg:px-10 ">
+    <div className=" relative w-full  px-4 lg:px-10 ">
       <div className="  container  mx-auto     relative  ">
         <motion.div className=" relative ">
           <SectionDiv>

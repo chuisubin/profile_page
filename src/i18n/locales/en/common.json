@@ -23,5 +23,8 @@
   },
   "experience": {
     "title": "Experience"
+  },
+  "project": {
+    "title": "Project"
   }
 }

@@ -1,12 +1,15 @@
+import { SectionTitleView } from "@/components/common/SectionTitleView";
+import { useTranslation } from "@/i18n/client";
 
+export const Project = () => {
+  const { t } = useTranslation();
 
-export const Project=()=>{
-
-
-    return (
-
-        <div>
-            Project
-        </div>
-    )
-}
+  return (
+    <div>
+      <div>
+        <SectionTitleView title={t("project.title")} />
+      </div>
+      <div></div>
+    </div>
+  );
+};

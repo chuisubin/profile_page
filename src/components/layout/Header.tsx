@@ -123,7 +123,7 @@ export const Header = () => {
       </div>
       <div className=" lg:hidden">
         <button
-          className="z-50 bg-secondary-500 p-1 w-8 h-8 rounded-lg fixed top-5 left-5 dark:bg-secondary-400 "
+          className="z-50 bg-secondary-500 p-1 w-8 h-8 rounded-lg fixed top-4 left-4 dark:bg-secondary-400 "
           onClick={() => setOpenMenu(true)}
         >
           <Bars3Icon
@@ -147,7 +147,7 @@ export const Header = () => {
           ref={menuRef}
         >
           <div className="z-50 flex flex-col gap-2   relative">
-            <div className="p-5 flex flex-row items-center justify-between">
+            <div className="p-4 flex flex-row items-center justify-between">
               <SetThemeBtn />
 
               <XMarkIcon
@@ -165,7 +165,7 @@ export const Header = () => {
                     setOpenMenu(false);
                   }}
                 >
-                  <div className="text-white p-5">{data.name}</div>
+                  <div className="text-white p-4">{data.name}</div>
                 </motion.div>
               );
             })}

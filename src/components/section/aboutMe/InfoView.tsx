@@ -5,8 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import clsx from "clsx";
 export const InfoView = () => {
   return (
-    <div className=" flex flex-col items-center justify-center">
-      <div className="max-w-[14rem] lg:max-w-xs  ">
+    <div className="px-4 lg:px-10  flex flex-col items-center justify-center">
+      <div className="max-w-[14rem] lg:max-w-[18rem]  ">
         <Swiper
           effect={"cards"}
           grabCursor={true}
