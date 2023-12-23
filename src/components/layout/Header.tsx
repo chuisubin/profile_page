@@ -141,7 +141,7 @@ export const Header = () => {
           transition={{ duration: 0.3 }}
           exit={{ opacity: 0, width: "0vw" }}
           className={clsx(
-            "fixed top-0 left-0 max-w-xs min-h-screen overflow-x-hidden  z-50  overflow-y-auto  bg-gradient-to-b to-primary-700 via-primary-600  from-primary-500  ",
+            " border-primary-700 shadow-lg fixed top-0 left-0 max-w-xs min-h-screen overflow-x-hidden  z-50  overflow-y-auto  bg-gradient-to-b to-primary-700 via-primary-600  from-primary-500  ",
             "dark:from-primary-700 dark:to-black"
           )}
           ref={menuRef}
@@ -151,7 +151,7 @@ export const Header = () => {
               <SetThemeBtn />
 
               <XMarkIcon
-                className="text-white w-6 h-6 
+                className="text-white w-6 h-6  cursor-pointer
                dark:text-white"
                 onClick={() => setOpenMenu(false)}
               />

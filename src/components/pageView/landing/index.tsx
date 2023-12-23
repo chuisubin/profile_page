@@ -70,7 +70,7 @@ export const Landing = () => {
 
   return (
     <div className=" relative w-full  px-4 lg:px-10 ">
-      <div className="  container  mx-auto     relative  ">
+      <div className="  lg:container  mx-auto     relative  ">
         <motion.div className=" relative ">
           <SectionDiv>
             <SpotlightCard>

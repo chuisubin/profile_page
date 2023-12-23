@@ -69,7 +69,9 @@ const Particle = () => {
               color: {
                 value: ["#ffffff", "#d4f0fc", "#89d6fb", "#02a9f7"],
               },
-
+              collisions: {
+                enable: true,
+              },
               move: {
                 enable: true,
                 speed: 1,
@@ -77,6 +79,7 @@ const Particle = () => {
                 straight: true,
                 random: false,
               },
+
               links: {
                 enable: false,
                 distance: 50,
@@ -94,7 +97,7 @@ const Particle = () => {
                       value: ["0️", "1️"],
                       font: "Binary X CHR BRK",
                       // font: "arial",
-                      style: " ",
+                      style: "",
                       weight: "100",
                       fill: true,
                     },

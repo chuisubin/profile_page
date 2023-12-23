@@ -11,6 +11,7 @@ export interface IAnimTextProps {
   className?: string;
   cursorClassName?: string;
   hiddenCursor?: boolean;
+  onTypingDone?: () => void;
 }
 
 const cursorVariants = {
@@ -33,8 +34,8 @@ export const TypeTextView = ({
   className,
   cursorClassName,
   hiddenCursor,
+  onTypingDone,
 }: IAnimTextProps) => {
-  const [done, setDone] = useState(false);
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
@@ -52,8 +53,8 @@ export const TypeTextView = ({
         setShowCursor(true);
       },
       onComplete: () => {
-        setDone(true);
         setShowCursor(false);
+        onTypingDone && onTypingDone();
       },
     });
     // animate(count, 60, {

@@ -10,6 +10,7 @@ import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
 import GithubIcon from "@public/images/github.svg";
 import LinkedInIcon from "@public/images/linkedin.svg";
 import data from "@data";
+import { useState } from "react";
 type HomeType = {
   onClickOption: (index: number) => void;
 };
@@ -18,6 +19,7 @@ export const Home = (props: HomeType) => {
   const infoData = data.getData("en").information;
   const { onClickOption } = props;
   const {} = useLayout();
+  const [doneIntro, setDoneIntro] = useState(false);
 
   return (
     <>
@@ -30,6 +32,9 @@ export const Home = (props: HomeType) => {
               <div className="mb-4 lg:mb-8  relative">
                 <div className="absolute top-0 left-0">
                   <TypeTextView
+                    onTypingDone={() => {
+                      setDoneIntro(true);
+                    }}
                     baseText={t("intro")}
                     delay={0.5}
                     duration={2.5}
@@ -43,7 +48,7 @@ export const Home = (props: HomeType) => {
               </div>
             </div>
             <motion.div className="mb-4">
-              <OptionList onClickOption={onClickOption} />
+              <OptionList onClickOption={onClickOption} doneIntro={doneIntro} />
             </motion.div>
 
             <motion.div
