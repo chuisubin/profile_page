@@ -12,8 +12,9 @@ export const LinkView = (props: {
 
   return (
     <Link
-      href={`/${lng}${href}`}
+      href={isBlank ? href : `/${lng}${href}`}
       passHref
+      className={props.className}
       target={isBlank ? "_blank" : "_self"}
       scroll={true}
     >

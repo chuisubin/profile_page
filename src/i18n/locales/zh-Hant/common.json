@@ -1,12 +1,12 @@
 {
-  "darkmode": "夜間模式",
-  "on": "開啟",
-  "off": "關閉",
-  "intro": "Hello World! My Name is Angus and a Front-end Developer. Welcome to my website.",
+  "darkmode": "Dark Mode",
+  "on": "On",
+  "off": "Off",
+  "intro": "Hello World! I'm Angus and a front-end developer with 4 years of experience. I focus is React(Next js). Welcome to my website.",
   "downloadCV": "Download CV",
   "option": {
     "home": "Home",
-    "aboutMe": "About me",
+    "about": "About",
     "experience": "Experience",
     "project": "Project"
   },
@@ -15,13 +15,18 @@
     "mySkills": "My Skills",
     "downloadCV": "Download CV",
     "name": "Name",
-
     "bornIn": "Born In",
-    "tel": "Tel",
+    "tel": "Telephone",
     "email": "Email",
     "address": "Address"
   },
   "experience": {
     "title": "Experience"
+  },
+  "project": {
+    "title": "Project"
+  },
+  "footer": {
+    "copyRight": "COPYRIGHT © 2023-2024 Angus Chui."
   }
 }
