@@ -33,6 +33,9 @@ export const skillSetData = [
   "Strapi",
   "Android",
   "JQuery",
+  "Storybook",
+  "Jira",
+  "Framer Motion",
 ];
 export const SkillView = () => {
   const { t } = useTranslation();
@@ -43,7 +46,7 @@ export const SkillView = () => {
 
   const [showBall, setShowBall] = useState(true);
   return (
-    <div className=" ">
+    <div className=" mb-4">
       <div className=" flex flex-row items-center justify-center gap-4 mb-2">
         <h1 className="  text-lg md:text-xl lg:text-3xl font-bold text-center">
           {t("aboutMe.mySkills")}
@@ -64,7 +67,7 @@ export const SkillView = () => {
       </div>
       <AnimatePresence>
         <motion.div
-          className={clsx("mx-auto lg:w-[30rem]  md:w-[25rem] w-full")}
+          className={clsx("mx-auto  max-w-[25rem] w-full")}
           animate={{ height: showBall ? "auto" : "100%" }}
         >
           {showBall ? (

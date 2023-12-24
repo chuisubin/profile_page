@@ -10,7 +10,7 @@ export const ProfileIcon = () => {
   const { currentScrollYProgress, scrollYProgress } = useLayout();
 
   return (
-    <div className="  w-full flex flex-col justify-center  items-start  relative">
+    <div className="  w-full flex flex-col justify-center  items-start  relative mb-4">
       <motion.div
         initial={{ width: 0 }}
         animate={{ width: "100%", left: 0 }}

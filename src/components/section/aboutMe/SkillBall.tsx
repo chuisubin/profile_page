@@ -68,7 +68,7 @@ const Word = ({
             ? "white"
             : "#01303f"
         ),
-        0.1
+        0.5
       );
   });
   return (
@@ -129,10 +129,9 @@ export const SkillBall = () => {
     <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
       <fog attach="fog" args={["#202025", 0, 80]} />
       <Suspense fallback={null}>
-        <group rotation={[5, 5.5, 5]}>
-          {/* <group rotation={[10, 10.5, 10]}> */}
-
-          <Cloud count={4} radius={10} />
+        {/* <group rotation={[5, 5.5, 5]}> */}
+        <group rotation={[10, 10.5, 10]}>
+          <Cloud count={4} radius={20} />
         </group>
       </Suspense>
       <TrackballControls />

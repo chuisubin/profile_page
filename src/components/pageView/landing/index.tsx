@@ -69,8 +69,8 @@ export const Landing = () => {
   };
 
   return (
-    <div className=" relative w-full  px-4 lg:px-10 ">
-      <div className="  lg:container  mx-auto     relative  ">
+    <div className=" relative w-full  px-5 lg:px-20 ">
+      <div className="  lg:container  xl:max-w-7xl mx-auto     relative  ">
         <motion.div className=" relative ">
           <SectionDiv>
             <SpotlightCard>

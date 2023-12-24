@@ -34,7 +34,7 @@ export const SpotlightCard = (props: { children: React.ReactNode }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="absolute  backdrop-blur  w-full h-full " />
+      <div className="absolute  backdrop-blur rounded-md w-full h-full " />
       {/* <div  className="spotlight-shadow"/> */}
 
       <motion.div

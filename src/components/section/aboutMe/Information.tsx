@@ -47,6 +47,9 @@ export const Infomation = () => {
 
   return (
     <div className=" flex flex-col gap-2  text-sm lg:text-lg   whitespace-nowrap">
+      <h1 className="  text-lg md:text-xl lg:text-3xl font-bold text-center">
+        {t("aboutMe.personalInfo")}
+      </h1>
       {infoList.map((item, index) => {
         return (
           <div

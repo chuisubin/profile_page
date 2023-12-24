@@ -25,7 +25,7 @@ export const Home = (props: HomeType) => {
     <>
       <motion.div className="    relative  w-full    ">
         <div className="flex-1 relative">
-          <div className="flex flex-col gap-2  ">
+          <div className="flex flex-col gap-2 lg:gap-4 ">
             <ProfileIcon />
 
             <div>

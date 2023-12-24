@@ -95,11 +95,11 @@ export const OptionList = (props: OptionListType) => {
                 setCurrentSelected(null);
               }}
               onHoverStart={() => {
-                setCurrentSelected(index + 1);
+                doneIntro && setCurrentSelected(index + 1);
               }}
               className={clsx(
                 " relative cursor-pointer flex-1 flex flex-row justify-center items-center gap-2 transition-all px-2",
-                isCurrentSelected && " bg-secondary-500   "
+                isCurrentSelected && doneIntro && " bg-secondary-500   "
               )}
               onClick={() => {
                 const section = document.querySelector(data.id);

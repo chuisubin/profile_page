@@ -99,16 +99,16 @@ export const Header = () => {
       <div className=" fixed top-0 w-full z-50 hidden lg:block ">
         <motion.nav
           className={clsx(
-            "hidden lg:block  backdrop-blur z-50 relative  w-fit rounded-md  mx-auto mt-4 h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-70 hover:opacity-100 transition-all"
+            " hidden lg:block  backdrop-blur z-50 relative  w-fit rounded-md  mx-auto mt-4 h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-80 hover:opacity-100 transition-colors"
           )}
           style={{
             background: isDarkMode
               ? `linear-gradient(to left, #000 ,  #01303f ${
-                  currentScrollYProgress < 30 ? 30 : currentScrollYProgress
+                  currentScrollYProgress < 20 ? 20 : currentScrollYProgress
                 }%  ,#02577a
                 )`
               : `linear-gradient(to right, #02a9f7 ,  #02577a ${
-                  currentScrollYProgress < 30 ? 30 : currentScrollYProgress
+                  currentScrollYProgress < 20 ? 20 : currentScrollYProgress
                 }%  ,#01303f  )`,
           }}
           transition={{ duration: 0.3 }}

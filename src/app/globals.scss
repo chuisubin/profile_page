@@ -121,7 +121,7 @@ body {
 
 .info_card{
 
-   @apply aspect-square bg-white flex flex-col justify-center items-center
+   @apply aspect-square bg-primary-500 flex flex-col justify-center items-center   rounded-md relative shadow-md p-4
 }
 
 
