@@ -89,7 +89,7 @@ export const Experience = () => {
                   initial={{ opacity: 0, y: -30, scale: 0.9 }}
                   viewport={{ once: true }}
                   whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   {/* <motion.div
                     initial={{ height: "0%" }}
@@ -99,7 +99,7 @@ export const Experience = () => {
                     className=" absolute top-0 left-2  w-1  bg-secondary-500 dark:bg-white"
                   /> */}
 
-                  <motion.div className=" flex flex-col lg:flex-row  relative items-start justify-between gap-2">
+                  <motion.div className=" flex flex-col lg:flex-row  relative items-start justify-between gap-2 lg:gap-4">
                     {/* <div className=" w-5 h-5 bg-white rounded-full absolute left-0 top-0  "></div> */}
                     <motion.div className="flex-1  ">
                       <div className="flex flex-col   text-lg lg:text-2xl mb-2">
@@ -122,8 +122,8 @@ export const Experience = () => {
                       <div className="text-base lg:text-xl mb-2">
                         {item.title}
                       </div>
-                      <div className=" break-words  p-2 rounded-md bg-white/30 dark:bg-black/30 whitespace-normal ">
-                        <div className=" mb-2 text-xs lg:text-sm">
+                      <div className=" break-words  p-2 lg:p-4 rounded-md bg-white/30 dark:bg-black/30 whitespace-normal ">
+                        <div className=" mb-2 text-sm lg:text-base">
                           {item.description}
                         </div>
 

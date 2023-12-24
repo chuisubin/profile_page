@@ -13,6 +13,8 @@
   "aboutMe": {
     "title": "About me",
     "mySkills": "My Skills",
+    "list": "List",
+    "ball": "3D ball",
     "downloadCV": "Download CV",
     "name": "Name",
     "bornIn": "Born In",

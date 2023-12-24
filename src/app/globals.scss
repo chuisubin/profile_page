@@ -124,3 +124,19 @@ body {
    @apply aspect-square bg-white flex flex-col justify-center items-center
 }
 
+
+
+.footerText{
+
+  @apply 
+text-white/80 dark:text-white/50 text-sm lg:text-base
+}
+
+
+
+canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+}

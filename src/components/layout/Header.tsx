@@ -1,6 +1,12 @@
 import Image from "next/image";
 import { DarkModeProvider, useDarkMode } from "@/hook/useDarkModeHook";
-import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import { useMemo, useRef, useState } from "react";
 import SettingIcon from "@public/images/setting.svg";
 import { useOnClickOutside } from "usehooks-ts";
@@ -77,7 +83,7 @@ export const Header = () => {
         onClick={() => {
           changeTheme();
         }}
-        className=""
+        className=" hover:bg-white hover:text-secondary-500 hover:dark:bg-secondary-400 hover:dark:text-black transition-all rounded-md p-1"
       >
         {isDarkMode ? (
           <SunIcon className={"w-6 h-6"} />
@@ -93,7 +99,7 @@ export const Header = () => {
       <div className=" fixed top-0 w-full z-50 hidden lg:block ">
         <motion.nav
           className={clsx(
-            "hidden lg:block  backdrop-blur z-50 relative  w-fit rounded-md  mx-auto mt-4 h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-90"
+            "hidden lg:block  backdrop-blur z-50 relative  w-fit rounded-md  mx-auto mt-4 h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-70 hover:opacity-100 transition-all"
           )}
           style={{
             background: isDarkMode

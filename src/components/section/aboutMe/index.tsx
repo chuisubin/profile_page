@@ -12,6 +12,7 @@ import { SkillView } from "./SkillView";
 import { InfoView } from "./InfoView";
 import { SectionTitleView } from "@/components/common/SectionTitleView";
 import { Infomation } from "./Information";
+import { SpaceLine } from "@/components/common/SpaceLine";
 
 export const AboutMe = () => {
   const { t } = useTranslation();
@@ -61,8 +62,9 @@ Outside of work, I enjoy staying active through sports and have a keen interest 
                 <InfoView />
               </div>
             </div>
-
-            <SkillView />
+            <div className="mb-4">
+              <SkillView />
+            </div>
             {/* <div
               className="mb-4 cursor-pointer w-fit "
               onClick={() => setOpenModal(true)}

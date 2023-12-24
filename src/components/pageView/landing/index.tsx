@@ -22,10 +22,10 @@ import { useTranslation } from "@/i18n/client";
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import clsx from "clsx";
 import { AboutMe } from "@/components/section/aboutMe";
-import { Experience } from "@/components/section/Experience";
+import { Experience } from "@/components/section/experience";
 import { Project } from "@/components/section/project";
 import { useLayout } from "@/hook/useLayoutHook";
-import { Home } from "@/components/section/Home";
+import { Home } from "@/components/section/home";
 
 const SectionDiv = ({ children }: { children: ReactElement }) => {
   return (
