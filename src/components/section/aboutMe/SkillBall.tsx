@@ -126,7 +126,11 @@ const Cloud = ({ count = 4, radius = 20 }) => {
 export const SkillBall = () => {
   return (
     // <div className="    flex justify-end items-start">
-    <Canvas dpr={[1, 2]} camera={{ position: [0, 0, 35], fov: 90 }}>
+    <Canvas
+      dpr={[1, 2]}
+      camera={{ position: [0, 0, 35], fov: 90 }}
+      className="rounded-full"
+    >
       <fog attach="fog" args={["#202025", 0, 80]} />
       <Suspense fallback={null}>
         {/* <group rotation={[5, 5.5, 5]}> */}

@@ -7,8 +7,8 @@ import { useTranslation } from "@/i18n/client";
 import clsx from "clsx";
 import { motion } from "framer-motion";
 import { ArrowDownTrayIcon } from "@heroicons/react/24/outline";
-import GithubIcon from "@public/images/github.svg";
-import LinkedInIcon from "@public/images/linkedin.svg";
+import GithubIcon from "@public/images/common/github.svg";
+import LinkedInIcon from "@public/images/common/linkedin.svg";
 import data from "@data";
 import { useState } from "react";
 type HomeType = {

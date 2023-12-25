@@ -2,7 +2,7 @@ import { TypeTextView } from "@/components/common/TypeTextView";
 import { animate, motion, stagger } from "framer-motion";
 import clsx from "clsx";
 import { useEffect, useMemo, useState } from "react";
-import PlayIcon from "@public/images/play-icon.svg";
+import PlayIcon from "@public/images/common/play-icon.svg";
 import { useTranslation } from "@/i18n/client";
 
 type OptionListType = {

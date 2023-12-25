@@ -8,7 +8,6 @@ import {
   useTransform,
 } from "framer-motion";
 import { useMemo, useRef, useState } from "react";
-import SettingIcon from "@public/images/setting.svg";
 import { useOnClickOutside } from "usehooks-ts";
 import { useTranslation } from "@/i18n/client";
 import { useLayout } from "@/hook/useLayoutHook";
@@ -16,8 +15,8 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 
-import SunIcon from "@public/images/sun.svg";
-import MoonIcon from "@public/images/moon.svg";
+import SunIcon from "@public/images/common/sun.svg";
+import MoonIcon from "@public/images/common/moon.svg";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 export const Header = () => {
