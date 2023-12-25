@@ -26,6 +26,7 @@ font-family: 'Noto Sans HK', sans-serif;
 
 html{
   scroll-behavior: smooth;
+
 }
 
 body {
@@ -121,8 +122,7 @@ body {
 
 .info_card{
 
-   @apply aspect-square bg-primary-500 flex flex-col justify-center items-center   rounded-md relative shadow-md p-4
-}
+  @apply aspect-square bg-primary-500 flex flex-col justify-center items-center rounded-md relative shadow-md p-4}
 
 
 
@@ -134,9 +134,44 @@ text-white/80 dark:text-white/50 text-sm lg:text-base
 
 
 
-canvas {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: pixelated;
-  image-rendering: optimize-contrast;
+// canvas {
+//   image-rendering: -moz-crisp-edges;
+//   image-rendering: -webkit-optimize-contrast;
+//   image-rendering: pixelated;
+//   image-rendering: optimize-contrast;
+// }
+
+
+
+.colorText{
+  -webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+  @apply 
+  bg-gradient-to-r to-primary-500 from-white
 }
+
+
+@keyframes gradientChange {
+  0% {
+    background-position: 0%
+  }
+
+  50% {
+    background-position: 100%
+  }
+
+  100% {
+    background-position: 0%
+  }
+}
+
+.gradient {
+  background: linear-gradient(90deg,  #fbae89, #f75002, #7a2502);
+  background-size: 200% 200%;
+}
+
+.element-to-rotate {
+  animation: gradientChange 4s ease infinite;
+}
+

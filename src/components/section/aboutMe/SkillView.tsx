@@ -47,7 +47,7 @@ export const SkillView = () => {
   const [showBall, setShowBall] = useState(true);
   return (
     <div className=" mb-4">
-      <div className=" flex flex-row items-center justify-center gap-4 mb-2">
+      <div className=" flex flex-row items-center justify-center gap-2 lg:gap-4 mb-2">
         <h1 className="  text-lg md:text-xl lg:text-3xl font-bold text-center">
           {t("aboutMe.mySkills")}
         </h1>
@@ -91,7 +91,7 @@ export const SkillView = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className=" text-base lg:text-lg text-primary-700  dark:text-white  px-1 lg:px-2"
+                    className=" text-sm lg:text-lg text-primary-700  dark:text-white  px-2"
                     key={index}
                   >
                     {item}

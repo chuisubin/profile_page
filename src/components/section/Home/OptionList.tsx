@@ -26,7 +26,7 @@ const cursorVariants = {
 export const OptionItem = (props: { children: React.ReactNode }) => {
   const { children } = props;
   return (
-    <motion.div className={clsx("whitespace-nowrap  hidden delayShow ")}>
+    <motion.div className={clsx("whitespace-nowrap  hidden delayShow pl-2 ")}>
       {children}
     </motion.div>
   );

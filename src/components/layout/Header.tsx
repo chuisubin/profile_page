@@ -65,15 +65,21 @@ export const Header = () => {
   };
 
   const NavBtn = ({ label }: { label: string }) => {
+    const [hover, setHover] = useState(false);
     return (
-      <div
+      <motion.div
         className={clsx(
-          " cursor-pointer px-4 py-1 rounded-md text-white bg-transparent hover:bg-white hover:text-secondary-500",
-          "dark:hover:bg-secondary-400 dark:hover:text-black"
+          " relative  cursor-pointer px-4 py-1 rounded-tr-md rounded-tl-md text-white bg-transparent  "
         )}
+        onHoverStart={() => setHover(true)}
+        onHoverEnd={() => setHover(false)}
       >
-        {label}
-      </div>
+        <motion.div
+          className="h-1 absolute left-0 right-0 mx-auto -bottom-1 w-0 dark:bg-secondary-400 bg-secondary-500"
+          animate={{ width: hover ? "100%" : "0%" }}
+        />
+        <span className=" ">{label}</span>
+      </motion.div>
     );
   };
 

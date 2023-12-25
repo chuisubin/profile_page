@@ -52,21 +52,24 @@ export const Home = (props: HomeType) => {
             </motion.div>
 
             <motion.div
-              className=" mx-auto w-full lg:w-auto flex flex-col  lg:flex-row   gap-4   "
+              className=" mx-auto w-full lg:w-auto flex flex-col  lg:flex-row   gap-4   relative "
               initial={{ opacity: 0, x: "100%" }}
               animate={{ opacity: 1, x: "0%" }}
               transition={{ duration: 1, delay: 1 }}
             >
-              <button
+              <motion.button
                 className={clsx(
-                  "w-fit flex-nowrap h-8 lg:h-10 transition-all items-center flex flex-row rounded-3xl   px-4  dark:bg-secondary-400 dark:text-black text-white bg-secondary-500  active:scale-95 hover:scale-105"
+                  " element-to-rotate gradient relative  w-fit flex-nowrap h-8 lg:h-10 transition-all items-center ",
+                  "flex flex-row   rounded-md  px-4  text-white  "
                 )}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 <span className="text-base lg:text-lg whitespace-nowrap leading-normal ">
                   {t("downloadCV")}
                 </span>
                 <ArrowDownTrayIcon className=" ml-1 w-5 h-5" />
-              </button>
+              </motion.button>
               <div className=" flex flex-row gap-4 items-center h-8 lg:h-10">
                 <button
                   className=" transition-all h-full  aspect-square flex  items-center justify-center bg-white rounded-full hover:scale-105 active:scale-95 "

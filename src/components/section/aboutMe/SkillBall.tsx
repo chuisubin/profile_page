@@ -68,7 +68,7 @@ const Word = ({
             ? "white"
             : "#01303f"
         ),
-        0.5
+        0.1
       );
   });
   return (
