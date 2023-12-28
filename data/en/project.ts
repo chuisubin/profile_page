@@ -15,8 +15,20 @@ import {
   CooltechResponsiveImgSrc,
   CooltechContactUsImgSrc,
 } from "@public/images/project/cooltechWebsite";
+
+import {
+  ChannelCLandingImgSrc,
+  ChannelCDarkmodeImgSrc,
+  ChannelCDetailImgSrc,
+  ChannelCCommentImgSrc,
+  ChannelCMemberImgSrc,
+  ChannelCPlanImgSrc,
+  ChannelCSettingImgSrc,
+} from "@public/images/project/channelC";
+import { StudyLuImgs } from "@public/images/project/studylu";
 export const project = [
   {
+    index: 5,
     pjName: "Anti-drug Game",
     pjDescription: "This is the website for Po Leung Kuk Anti-drug event.",
     techStacks: ["React", "Nextjs", "Typescript", "TailwindCSS"],
@@ -45,16 +57,18 @@ export const project = [
     ],
   },
   {
-    pjName: "Cooltech solution website",
+    index: 1,
+    pjName: "Cooltech Solutions",
     pjDescription:
-      "This is the official website of COOLTECH Solution Limited, allowing visitors to understand the company.",
+      "This is the official website of Cooltech Solutions Limited, allowing visitors to understand the company.",
     techStacks: [
       "React",
       "Nextjs",
       "Typescript",
       "TailwindCSS",
       "Framer Motion",
-      "i18n",
+      "I18n",
+      "SEO",
     ],
     coverImageSrc: CooltechHomeImgSrc,
     pjLink: "https://cooltechsol.com/en/",
@@ -65,7 +79,7 @@ export const project = [
       },
       {
         src: CooltechResponsiveImgSrc,
-        description: "",
+        description: "Responsive design.",
       },
       {
         src: CooltechWeProvideImgSrc,
@@ -79,6 +93,126 @@ export const project = [
 
       {
         src: CooltechContactUsImgSrc,
+        description: "",
+      },
+    ],
+  },
+  {
+    index: 0,
+    pjName: "Channel C Website",
+    pjDescription:
+      "Channel C is a online media company. Its website provides the latest news and information about HK, and it also has a membership subscription plan that brings benefits to its members.",
+    techStacks: [
+      "React",
+      "Nextjs",
+      "Typescript",
+      "TailwindCSS",
+      "SEO",
+      "Google tag manager",
+      "Dexie.js",
+      "Firebase",
+      "Graphql",
+    ],
+    coverImageSrc: ChannelCLandingImgSrc,
+    pjLink: "https://channelchk.com/",
+    images: [
+      {
+        src: ChannelCDarkmodeImgSrc,
+        description: "",
+      },
+      {
+        src: ChannelCDetailImgSrc,
+        description: "",
+      },
+      {
+        src: ChannelCCommentImgSrc,
+        description: "",
+      },
+      {
+        src: ChannelCMemberImgSrc,
+        description: "",
+      },
+      {
+        src: ChannelCPlanImgSrc,
+        description: "",
+      },
+      {
+        src: ChannelCSettingImgSrc,
+        description: "",
+      },
+    ],
+  },
+  {
+    index: 2,
+    pjName: "StudyLU",
+    pjDescription:
+      "A web application allowing students to do online practices and teachers to create practices for their students.",
+    techStacks: [
+      "React",
+      "Nextjs",
+      "Typescript",
+      "TailwindCSS",
+      "Firebase",
+      "Graphql",
+      "Socket",
+    ],
+    coverImageSrc: StudyLuImgs.login,
+    pjLink: "https://nightly.studylu.com/auth/signin",
+    images: [
+      {
+        src: StudyLuImgs.parentLanding,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.parentDaily,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.parentRecord,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.createPractice,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.createMC,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.createSetting,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.createSort,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.createWriting,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.exportQuestion,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.studentLanding,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.studentRecord,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.math,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.review,
+        description: "",
+      },
+      {
+        src: StudyLuImgs.selectQuestionBar,
         description: "",
       },
     ],

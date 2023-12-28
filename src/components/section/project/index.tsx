@@ -11,6 +11,7 @@ import { useParams } from "next/navigation";
 import { CustomDialog } from "@/components/common/CustomDialog";
 import { XMarkIcon } from "@heroicons/react/24/solid";
 export type ProjectItemType = {
+  index: number;
   pjName: string;
   pjDescription: string;
   techStacks: string[];
@@ -47,18 +48,20 @@ export const Project = () => {
       </div>
       <div className=" ">
         <div className="max-w-4xl w-full mx-auto  flex flex-col  gap-10 py-8  ">
-          {projectList.map((project, index) => {
-            return (
-              <div key={index} className=" w-full  ">
-                {project && (
-                  <ProjectItem
-                    project={project}
-                    clickDetail={() => setShowGallery(project)}
-                  />
-                )}
-              </div>
-            );
-          })}
+          {projectList
+            .sort((a, b) => (a.index > b.index ? 1 : -1))
+            .map((project, index) => {
+              return (
+                <div key={index} className=" w-full  ">
+                  {project && (
+                    <ProjectItem
+                      project={project}
+                      clickDetail={() => setShowGallery(project)}
+                    />
+                  )}
+                </div>
+              );
+            })}
         </div>
       </div>
       <motion.div

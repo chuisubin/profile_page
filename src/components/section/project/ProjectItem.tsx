@@ -62,11 +62,11 @@ export const ProjectItem = ({
         }}
       >
         <ProjectCard>
-          <div className=" relative z-10">
+          <div className=" relative z-10 ">
             <div className="   relative w-full h-full aspect-video  overflow-hidden">
               <Image
                 className={clsx(
-                  " object-cover object-center w-full h-auto  z-10 transition-all",
+                  " object-cover object-center w-full h-auto  z-10 transition-all ",
                   hover && "scale-110"
                 )}
                 src={project.coverImageSrc}
@@ -79,7 +79,7 @@ export const ProjectItem = ({
               className="hidden lg:flex  z-10 absolute top-0 bottom-0 right-0 left-0 bg-black/40  items-center justify-center "
               animate={{ opacity: hover ? 1 : 0 }}
             >
-              <div className=" flex flex-col gap-4 items-center justify-center bg-black/70 p-10  rounded-md">
+              <div className=" flex flex-col gap-4 items-center justify-center bg-black/70 p-10  ">
                 <div className=" relative  pb-1 w-full">
                   <span className="font-bold text-2xl ">
                     {project.pjName}

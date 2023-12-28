@@ -1,0 +1,14 @@
+import Landing from "./landing.png";
+import Darkmode from "./darkMode.png";
+import Detail from "./detail.png";
+import Comment from "./comment.png";
+import Member from "./member.png";
+import Plan from "./plan.png";
+import Setting from "./setting.png";
+export const ChannelCLandingImgSrc = Landing.src;
+export const ChannelCDarkmodeImgSrc = Darkmode.src;
+export const ChannelCDetailImgSrc = Detail.src;
+export const ChannelCCommentImgSrc = Comment.src;
+export const ChannelCMemberImgSrc = Member.src;
+export const ChannelCPlanImgSrc = Plan.src;
+export const ChannelCSettingImgSrc = Setting.src;
