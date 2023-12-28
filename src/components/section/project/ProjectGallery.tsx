@@ -75,7 +75,8 @@ export const ProjectGallery = ({ project }: { project: ProjectItemType }) => {
               whileTap={{ scale: 0.8 }}
               whileHover={{ scale: 1.1 }}
               className={clsx(
-                "z-10 absolute left-2  top-1/2 -translate-y-1/2 p-1 rounded-full disabled:opacity-50  bg-white/80 text-black  transition-all"
+                "z-10 absolute left-2  top-1/2 -translate-y-1/2 p-1 rounded-full disabled:opacity-50  bg-white/80 text-black  transition-all",
+                currentSwiperIndex === 0 && "hidden"
               )}
               onClick={() => swiperRef.current?.slidePrev()}
               disabled={currentSwiperIndex === 0}
@@ -86,7 +87,8 @@ export const ProjectGallery = ({ project }: { project: ProjectItemType }) => {
               whileTap={{ scale: 0.8 }}
               whileHover={{ scale: 1.1 }}
               className={clsx(
-                "z-10 absolute right-2 top-1/2 -translate-y-1/2  p-1 rounded-full disabled:opacity-50 bg-white/80 text-black transition-all"
+                "z-10 absolute right-2 top-1/2 -translate-y-1/2  p-1 rounded-full disabled:opacity-50 bg-white/80 text-black transition-all",
+                currentSwiperIndex === project.images.length - 1 && "hidden"
               )}
               onClick={() => swiperRef.current?.slideNext()}
               disabled={currentSwiperIndex === project.images.length - 1}

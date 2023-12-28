@@ -13,6 +13,7 @@ import { XMarkIcon } from "@heroicons/react/24/solid";
 export type ProjectItemType = {
   pjName: string;
   pjDescription: string;
+  techStacks: string[];
   coverImageSrc: string;
   pjLink: string;
   images: {
@@ -74,7 +75,7 @@ export const Project = () => {
           className="text-white z-10 absolute right-10 top-10 cursor-pointer active:scale-95 p-1 hover:scale-110  rounded-full hover:border transition-all"
           onClick={() => setShowGallery(null)}
         >
-          <XMarkIcon className=" w-6 h-6 lg:w-10 lg:h-10 " />
+          <XMarkIcon className=" w-8 h-8 lg:w-10 lg:h-10 " />
         </button>
         <div className=" relative w-full h-full ">
           {showGallery && <ProjectGallery project={showGallery} />}

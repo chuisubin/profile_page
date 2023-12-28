@@ -6,7 +6,8 @@ import Image from "next/image";
 import { useState } from "react";
 import clsx from "clsx";
 import { useTranslation } from "@/i18n/client";
-
+import { LinkIcon } from "@heroicons/react/24/solid";
+import { LinkView } from "@/components/common/LinkView";
 export const ProjectItem = ({
   project,
   clickDetail,
@@ -37,6 +38,15 @@ export const ProjectItem = ({
       <div className=" lg:hidden mb-2">
         <span className="text-xl  text-center text-primary-700 dark:text-white">
           {project?.pjName}
+          {project?.pjLink && (
+            <LinkView
+              className="ml-2 inline-block  align-middle "
+              href={project.pjLink}
+              isBlank
+            >
+              <LinkIcon className="w-4 h-4 lg:w-5 lg:h-5 " />
+            </LinkView>
+          )}
         </span>
       </div>
       <motion.div
@@ -69,9 +79,20 @@ export const ProjectItem = ({
               className="hidden lg:flex  z-10 absolute top-0 bottom-0 right-0 left-0 bg-black/40  items-center justify-center "
               animate={{ opacity: hover ? 1 : 0 }}
             >
-              <div className=" flex flex-col gap-2 items-center justify-center bg-black/70 p-10  rounded-md">
+              <div className=" flex flex-col gap-4 items-center justify-center bg-black/70 p-10  rounded-md">
                 <div className=" relative  pb-1 w-full">
-                  <span className="font-bold text-2xl ">{project.pjName}</span>
+                  <span className="font-bold text-2xl ">
+                    {project.pjName}
+                    {project?.pjLink && (
+                      <LinkView
+                        className="ml-2 inline-block  align-middle "
+                        href={project.pjLink}
+                        isBlank
+                      >
+                        <LinkIcon className="w-4 h-4 lg:w-5 lg:h-5 " />
+                      </LinkView>
+                    )}
+                  </span>
 
                   <motion.div
                     className="absolute h-1 bg-white left-0  bottom-0 "
@@ -84,14 +105,27 @@ export const ProjectItem = ({
                 <div className=" whitespace-normal break-words text-base lg:text-lg">
                   {project.pjDescription}
                 </div>
+                {/* <div className=" flex flex-row flex-wrap gap-2">
+                  {project?.techStacks?.map((tech, idx) => (
+                    <span key={idx} title={tech}>
+                      {tech}
+                      {idx !== project.techStacks.length - 1 && ","}
+                    </span>
+                  ))}
+                </div> */}
                 <MoreBtn />
               </div>
             </motion.div>
           </div>
         </ProjectCard>
       </motion.div>
-      <div className="flex flex-col  lg:hidden gap-2 mt-2 text-primary-700 dark:text-white">
-        <div className=" mb-2">{project.pjDescription}</div>
+      <div className="flex flex-col gap-4 lg:hidden  mt-2 text-primary-700 dark:text-white">
+        <div className="">{project.pjDescription}</div>
+        {/* {project?.techStacks?.map((tech, idx) => (
+          <span key={idx} title={tech}>
+            {tech}
+          </span>
+        ))} */}
         <MoreBtn customClassName={"dark:border-white border-primary-700"} />
       </div>
     </>
