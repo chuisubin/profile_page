@@ -29,7 +29,7 @@ export const SpotlightCard = (props: { children: React.ReactNode }) => {
 
   return (
     <div
-      className="relative  group   bg-white/30 dark:bg-primary-700/30 shadow rounded-md  z-10 "
+      className="relative  group   bg-white/30 dark:bg-primary-700/30 shadow rounded-md   "
       onMouseMove={mouseMoveHandle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

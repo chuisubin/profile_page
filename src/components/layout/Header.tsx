@@ -100,11 +100,11 @@ export const Header = () => {
   };
 
   return (
-    <div>
-      <div className=" fixed top-0 w-full z-50 hidden lg:block ">
-        <motion.nav
+    <div className="  relative z-auto">
+      <motion.nav className="fixed  z-20 top-4  left-1/2 right-1/2 w-0   hidden lg:flex justify-center ">
+        <motion.div
           className={clsx(
-            " hidden lg:block  backdrop-blur z-50 relative  w-fit rounded-md  mx-auto mt-4 h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-80 hover:opacity-100 transition-colors"
+            "z-20   w-fit rounded-md  mx-auto  h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-80 hover:opacity-100 transition-colors"
           )}
           style={{
             background: isDarkMode
@@ -130,11 +130,11 @@ export const Header = () => {
             </div>
             <SetThemeBtn />
           </div>
-        </motion.nav>
-      </div>
+        </motion.div>
+      </motion.nav>
       <div className=" lg:hidden">
         <button
-          className="z-50 bg-secondary-500 p-1 w-8 h-8 rounded-lg fixed top-4 left-4 dark:bg-secondary-400 "
+          className="z-20 bg-secondary-500 p-1 w-8 h-8 rounded-lg fixed top-4 left-4 dark:bg-secondary-400 "
           onClick={() => setOpenMenu(true)}
         >
           <Bars3Icon

@@ -2,11 +2,14 @@ import { ProjectCard } from "@/components/common/ProjectCard";
 import { SectionTitleView } from "@/components/common/SectionTitleView";
 import { useTranslation } from "@/i18n/client";
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { ProjectItem } from "./ProjectItem";
-
-import AntidrugHomepage from "@public/images/project/antidrug/antidrug-home.png";
-
+import data from "@data";
+import { ProjectGallery } from "./ProjectGallery";
+import clsx from "clsx";
+import { useParams } from "next/navigation";
+import { CustomDialog } from "@/components/common/CustomDialog";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 export type ProjectItemType = {
   pjName: string;
   pjDescription: string;
@@ -20,52 +23,63 @@ export type ProjectItemType = {
 
 export const Project = () => {
   const { t } = useTranslation();
+  const params = useParams();
+  const projectList = data.getData(params.lng).project;
+  const [showGallery, setShowGallery] = useState<ProjectItemType | null>(null);
 
-  const projectList = useMemo<ProjectItemType[]>(() => {
-    return [
-      {
-        pjName: "Anti-drug Game",
-        pjDescription: "",
-        coverImageSrc: AntidrugHomepage.src,
-        pjLink: "https://www.yds-antidrugsgame.com/",
-        images: [
-          {
-            src: "",
-            description: "",
-          },
-        ],
-      },
-      // {
-      //   pjName: "Cooltech Website",
-      //   pjDescription: "",
-      //   coverImageSrc: "",
-      //   pjLink: "https://www.yds-antidrugsgame.com/",
-      //   images: [
-      //     {
-      //       src: "",
-      //       description: "",
-      //     },
-      //   ],
-      // },
-    ];
-  }, []);
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (html) {
+      html.style.overflow = showGallery ? "hidden" : "auto";
+    }
+    return () => {
+      if (html) {
+        html.style.overflow = "auto";
+      }
+    };
+  }, [showGallery]);
 
   return (
-    <div>
+    <div className=" ">
       <div>
         <SectionTitleView title={t("project.title")} />
       </div>
-      <div className=" flex flex-col  gap-4 ">
-        <div className="max-w-3xl w-full mx-auto ">
+      <div className=" ">
+        <div className="max-w-4xl w-full mx-auto  flex flex-col  gap-10 py-8  ">
           {projectList.map((project, index) => {
             return (
               <div key={index} className=" w-full  ">
-                <ProjectItem project={project} />
+                {project && (
+                  <ProjectItem
+                    project={project}
+                    clickDetail={() => setShowGallery(project)}
+                  />
+                )}
               </div>
             );
           })}
         </div>
       </div>
+      <motion.div
+        className={clsx(
+          "bg-black/80 fixed top-0 bottom-0 left-0 right-0   items-center justify-center hidden "
+        )}
+        animate={{
+          opacity: showGallery ? 1 : 0,
+          zIndex: showGallery ? 50 : 0,
+          display: showGallery ? "flex" : "none",
+        }}
+      >
+        <button
+          className="text-white z-10 absolute right-10 top-10 cursor-pointer active:scale-95 p-1 hover:scale-110  rounded-full hover:border transition-all"
+          onClick={() => setShowGallery(null)}
+        >
+          <XMarkIcon className=" w-6 h-6 lg:w-10 lg:h-10 " />
+        </button>
+        <div className=" relative w-full h-full ">
+          {showGallery && <ProjectGallery project={showGallery} />}
+        </div>
+      </motion.div>
     </div>
   );
 };

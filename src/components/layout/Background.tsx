@@ -29,7 +29,7 @@ const Particle = () => {
   const [init, setInit] = useState(false);
 
   const particlesLoaded = async (container: any) => {
-    await console.log(container);
+    // await console.log(container);
   };
 
   return (
