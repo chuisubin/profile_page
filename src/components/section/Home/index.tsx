@@ -1,7 +1,7 @@
 import { SpotlightCard } from "@/components/common/SpotlightCard";
 import { TypeTextView } from "@/components/common/TypeTextView";
-import { OptionList } from "@/components/section/home/OptionList";
-import { ProfileIcon } from "@/components/section/home/ProfileIcon";
+import { OptionList } from "@/components/section/Home/OptionList";
+import { ProfileIcon } from "@/components/section/Home/ProfileIcon";
 import { useLayout } from "@/hook/useLayoutHook";
 import { useTranslation } from "@/i18n/client";
 import clsx from "clsx";
