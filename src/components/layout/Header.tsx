@@ -68,7 +68,7 @@ export const Header = () => {
     return (
       <motion.div
         className={clsx(
-          " relative  cursor-pointer px-4 py-1 rounded-tr-md rounded-tl-md text-white bg-transparent  "
+          " relative  cursor-pointer px-4 py-1 rounded-tr-md rounded-tl-md  text-white bg-transparent  "
         )}
         onHoverStart={() => setHover(true)}
         onHoverEnd={() => setHover(false)}
@@ -104,7 +104,7 @@ export const Header = () => {
       <motion.nav className="fixed  z-20 top-4  left-1/2 right-1/2 w-0   hidden lg:flex justify-center ">
         <motion.div
           className={clsx(
-            "z-20   w-fit rounded-md  mx-auto  h-14 shadow-lg shadow-primary-700  dark:shadow-black opacity-80 hover:opacity-100 transition-colors"
+            "z-20   w-fit rounded-md  mx-auto  h-14 shadow-md shadow-black   opacity-80 hover:opacity-100 transition-colors"
           )}
           style={{
             background: isDarkMode
@@ -112,9 +112,9 @@ export const Header = () => {
                   currentScrollYProgress < 20 ? 20 : currentScrollYProgress
                 }%  ,#02577a
                 )`
-              : `linear-gradient(to right, #02a9f7 ,  #02577a ${
+              : `linear-gradient(to right, #02a9f7 ,  #02a9f7 ${
                   currentScrollYProgress < 20 ? 20 : currentScrollYProgress
-                }%  ,#01303f  )`,
+                }%  ,#02577a  )`,
           }}
           transition={{ duration: 0.3 }}
         >

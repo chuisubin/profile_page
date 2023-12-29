@@ -6,13 +6,14 @@ import {
 } from "framer-motion";
 import { useEffect, useState, MouseEvent } from "react";
 import clsx from "clsx";
+import { useDarkMode } from "@/hook/useDarkModeHook";
 
 export const SpotlightCard = (props: { children: React.ReactNode }) => {
   const { children } = props;
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
-
+  const { isDarkMode } = useDarkMode();
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {}, []);
@@ -29,7 +30,7 @@ export const SpotlightCard = (props: { children: React.ReactNode }) => {
 
   return (
     <div
-      className="relative  group   bg-white/30 dark:bg-primary-700/30 shadow rounded-md   "
+      className="relative  group   bg-white/30 dark:bg-black/50 shadow rounded-md   "
       onMouseMove={mouseMoveHandle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -43,7 +44,9 @@ export const SpotlightCard = (props: { children: React.ReactNode }) => {
           "group-hover:opacity-100 opacity-0 "
         )}
         style={{
-          background: useMotionTemplate`radial-gradient(circle at ${mouseX}px ${mouseY}px, rgb(212,240,252,0.3),transparent 50%) `,
+          background: isDarkMode
+            ? useMotionTemplate`radial-gradient(circle at ${mouseX}px ${mouseY}px, rgb(2,87,122,0.5),transparent 50%) `
+            : useMotionTemplate`radial-gradient(circle at ${mouseX}px ${mouseY}px, rgb(212,240,252,0.5),transparent 50%) `,
         }}
       />
 

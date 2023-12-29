@@ -52,7 +52,7 @@ Outside of work, I enjoy staying active through sports and have a keen interest 
           <SectionTitleView title={t("aboutMe.title")} />
 
           <div className=" w-full flex flex-col  relative ">
-            <div className=" flex flex-row flex-wrap  mb-4 relative ">
+            <div className=" flex flex-col lg:flex-row flex-wrap  mb-4 relative ">
               <div className="text-left break-words whitespace-pre-wrap mb-4 flex-1 text-sm lg:text-lg">
                 {/* {t("aboutMe.intro")} */}
                 {intro}

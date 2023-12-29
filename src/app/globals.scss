@@ -30,21 +30,14 @@ html{
 }
 
 body {
-  // color: rgb(var(--foreground-rgb));
-  // background: linear-gradient(
-  //     to bottom,
-  //     transparent,
-  //     rgb(var(--background-end-rgb))
-  //   )
-  //   rgb(var(--background-start-rgb));
+
   scroll-behavior: smooth;
     @apply
     relative  h-auto
     font-COOL
-    bg-fixed bg-gradient-to-b  
-    from-white  via-primary-600 to-primary-700 
-    dark:from-primary-600 dark:via-primary-700 dark:to-black 
+   bg-primary-700
 }
+//  bg-fixed bg-gradient-to-b from-white via-primary-600 to-primary-700 dark:from-primary-600 dark:via-primary-700 dark:to-black
 
 
 ::-moz-selection {

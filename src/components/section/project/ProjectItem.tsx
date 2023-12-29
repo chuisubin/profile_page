@@ -22,7 +22,7 @@ export const ProjectItem = ({
     return (
       <motion.button
         className={clsx(
-          "text-base lg:text-lg rounded-md border  px-4 py-1 ",
+          "text-base lg:text-lg rounded-md border  px-4 py-1 w-fit  mx-auto",
           customClassName
         )}
         onClick={clickDetail}
