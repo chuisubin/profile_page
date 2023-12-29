@@ -112,9 +112,9 @@ export const Header = () => {
                   currentScrollYProgress < 20 ? 20 : currentScrollYProgress
                 }%  ,#02577a
                 )`
-              : `linear-gradient(to right, #02a9f7 ,  #02a9f7 ${
+              : `linear-gradient(to right, #02a9f7,  #02577a ${
                   currentScrollYProgress < 20 ? 20 : currentScrollYProgress
-                }%  ,#02577a  )`,
+                }%  ,#01303f  )`,
           }}
           transition={{ duration: 0.3 }}
         >

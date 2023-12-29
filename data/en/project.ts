@@ -26,6 +26,8 @@ import {
   ChannelCSettingImgSrc,
 } from "@public/images/project/channelC";
 import { StudyLuImgs } from "@public/images/project/studylu";
+import { KitcheeImgs } from "@public/images/project/kitchee";
+import { FoodMarcoImgs } from "@public/images/project/foodmarco";
 export const project = [
   {
     index: 5,
@@ -103,7 +105,6 @@ export const project = [
     pjDescription:
       "Channel C is a online media company. Its website provides the latest news and information about HK, and it also has a membership subscription plan that brings benefits to its members.",
     techStacks: [
-      "React",
       "Nextjs",
       "Typescript",
       "TailwindCSS",
@@ -148,7 +149,6 @@ export const project = [
     pjDescription:
       "A web application allowing students to do online practices and teachers to create practices for their students.",
     techStacks: [
-      "React",
       "Nextjs",
       "Typescript",
       "TailwindCSS",
@@ -213,6 +213,92 @@ export const project = [
       },
       {
         src: StudyLuImgs.selectQuestionBar,
+        description: "",
+      },
+    ],
+  },
+  {
+    index: 3,
+    pjName: "KitChee",
+    pjDescription:
+      "Kitchee is a professional football club in Hong Kong. This is the official website of Kitchee.",
+    techStacks: [
+      "Nextjs",
+      "Typescript",
+      "TailwindCSS",
+      "Strapi",
+      "Graphql",
+      "Monorepo",
+      "Storybook",
+    ],
+    coverImageSrc: KitcheeImgs.home,
+    pjLink: "https://www.kitchee.com/",
+    images: [
+      {
+        src: KitcheeImgs.contentPage,
+        description: "",
+      },
+      { src: KitcheeImgs.matchDetail, description: "" },
+      { src: KitcheeImgs.articleNews, description: "" },
+      { src: KitcheeImgs.articleDetail, description: "" },
+      { src: KitcheeImgs.teamPlayer, description: "" },
+      { src: KitcheeImgs.playerDetail, description: "" },
+      { src: KitcheeImgs.teamDCoaches, description: "" },
+      { src: KitcheeImgs.appform, description: "" },
+      { src: KitcheeImgs.calendar, description: "" },
+    ],
+  },
+  {
+    index: 4,
+    pjName: "Food Marco Website",
+    pjDescription:
+      "Food Marco is a food sharing platform targeting the Taiwan market. Food enthusiasts can post food articles on the platform and receive cash back.",
+    techStacks: [
+      "Nextjs",
+      "Firebase",
+      "Material UI",
+      "Restful API",
+      "SEO",
+      "Bootstrap",
+      "Google Analytics",
+    ],
+    coverImageSrc: FoodMarcoImgs.homepage,
+    pjLink: "https://www.facebook.com/FoodMarco/?locale=zh_HK",
+    images: [
+      {
+        src: FoodMarcoImgs.login,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.detail,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.profile,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.referral,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.search,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.map,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.mapSearch,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.edit,
+        description: "",
+      },
+      {
+        src: FoodMarcoImgs.createArticle,
         description: "",
       },
     ],

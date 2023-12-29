@@ -27,9 +27,9 @@ export const MatrixBackground = () => {
 
     const draw = () => {
       if (ctx) {
-        ctx.fillStyle = "rgba(1,48,63,0.4)";
+        ctx.fillStyle = "rgba(1,48,63,0.35)";
         ctx.fillRect(0, 0, width, height);
-        ctx.fillStyle = "rgba(137,214,251)";
+        ctx.fillStyle = "rgba(2,169,247)";
         ctx.font = "15pt monospace";
       }
 

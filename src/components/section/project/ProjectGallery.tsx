@@ -64,7 +64,7 @@ export const ProjectGallery = ({ project }: { project: ProjectItemType }) => {
                     alt={project.pjName}
                     fill
                     loading="lazy"
-                    className=" aspect-video object-cover w-full h-auto  "
+                    className=" aspect-video object-contain  w-full h-auto  "
                   />
                 </SwiperSlide>
               );
