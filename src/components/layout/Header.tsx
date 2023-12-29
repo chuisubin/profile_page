@@ -88,12 +88,12 @@ export const Header = () => {
         onClick={() => {
           changeTheme();
         }}
-        className=" hover:bg-white hover:text-secondary-500 hover:dark:bg-secondary-400 hover:dark:text-black transition-all rounded-md p-1"
+        className=" hover:bg-white  hover:dark:bg-secondary-400  transition-all rounded-md p-1"
       >
         {isDarkMode ? (
-          <SunIcon className={"w-6 h-6"} />
+          <SunIcon className={"w-6 h-6 text-white hover:text-black"} />
         ) : (
-          <MoonIcon className={"w-6 h-6"} />
+          <MoonIcon className={"w-6 h-6 text-white hover:text-secondary-500"} />
         )}
       </button>
     );
@@ -175,6 +175,13 @@ export const Header = () => {
                     data.onClick();
                     setOpenMenu(false);
                   }}
+                  initial={{ opacity: 0, x: 80, y: 80 }}
+                  animate={{
+                    opacity: openMenu ? 1 : 0,
+                    x: openMenu ? 0 : 80,
+                    y: openMenu ? 0 : 80,
+                  }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
                   <div className="text-white p-4">{data.name}</div>
                 </motion.div>

@@ -52,14 +52,25 @@ export const Project = () => {
             .sort((a, b) => (a.index > b.index ? 1 : -1))
             .map((project, index) => {
               return (
-                <div key={index} className=" w-full  ">
+                <motion.div
+                  key={index}
+                  className=" w-full  "
+                  initial={{ opacity: 0, scale: 0.8, y: 100 }}
+                  whileInView={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                  }}
+                  viewport={{ once: true, amount: 0.8 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
                   {project && (
                     <ProjectItem
                       project={project}
                       clickDetail={() => setShowGallery(project)}
                     />
                   )}
-                </div>
+                </motion.div>
               );
             })}
         </div>
