@@ -37,6 +37,7 @@
     "react-i18next": "^13.2.2",
     "react-loading": "^2.0.3",
     "sass": "^1.68.0",
+    "sharp": "^0.33.1",
     "swiper": "^11.0.5",
     "three": "^0.160.0",
     "typewriter-effect": "^2.21.0",

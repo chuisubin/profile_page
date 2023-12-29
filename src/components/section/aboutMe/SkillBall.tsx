@@ -116,7 +116,7 @@ const Cloud = ({ count = 4, radius = 20 }) => {
       temp.push([points[i].multiplyScalar(radius), skillSetData[i]]);
 
     return temp;
-  }, [count, radius]);
+  }, [radius]);
 
   return words.map(([pos, word], index) => (
     <Word key={index} position={pos} word={word as string | THREE.Vector3} />
