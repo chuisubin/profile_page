@@ -63,6 +63,7 @@ export const ProjectGallery = ({ project }: { project: ProjectItemType }) => {
                     src={image.src}
                     alt={project.pjName}
                     fill
+                    loading="lazy"
                     className=" aspect-video object-cover w-full h-auto  "
                   />
                 </SwiperSlide>

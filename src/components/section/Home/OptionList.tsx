@@ -64,15 +64,15 @@ export const OptionList = (props: OptionListType) => {
       },
       {
         delay: 2,
-        label: t("option.experience"),
-        duration: 1,
-        id: "#experience",
-      },
-      {
-        delay: 3,
         label: t("option.project"),
         duration: 1,
         id: "#project",
+      },
+      {
+        delay: 3,
+        label: t("option.experience"),
+        duration: 1,
+        id: "#experience",
       },
     ];
   }, [t]);
