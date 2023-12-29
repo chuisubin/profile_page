@@ -21,6 +21,7 @@ export const Home = (props: HomeType) => {
   const {} = useLayout();
   const [doneIntro, setDoneIntro] = useState(false);
 
+  const downCVHandler = () => {};
   return (
     <>
       <motion.div className="    relative  w-full    ">
@@ -64,10 +65,15 @@ export const Home = (props: HomeType) => {
                 )}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={downCVHandler}
               >
-                <span className="text-base lg:text-lg whitespace-nowrap leading-normal ">
+                <a
+                  href={"/files/CV_AngusChui.pdf"}
+                  download
+                  className="text-base lg:text-lg whitespace-nowrap leading-normal "
+                >
                   {t("downloadCV")}
-                </span>
+                </a>
                 <ArrowDownTrayIcon className=" ml-1 w-5 h-5" />
               </motion.button>
               <div className=" flex flex-row gap-4 items-center h-8 lg:h-10">
