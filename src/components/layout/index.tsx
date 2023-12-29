@@ -10,7 +10,6 @@ import NightImage from "@public/images/pexels-pixabay-night.jpg";
 import { Background } from "./Background";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
-// import { BackToTop } from "./BackToTop";
 import { MatrixBackground } from "./MatrixBackground";
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
@@ -21,7 +20,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <Header />
       {children}
       <Footer />
-      {/* <BackToTop /> */}
       {/* <Background /> */}
       <MatrixBackground />
     </div>
