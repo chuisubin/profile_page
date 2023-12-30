@@ -35,7 +35,6 @@
     "react-device-detect": "^2.2.3",
     "react-dom": "^18",
     "react-i18next": "^13.2.2",
-    "react-loading": "^2.0.3",
     "sass": "^1.68.0",
     "sharp": "^0.33.1",
     "swiper": "^11.0.5",
