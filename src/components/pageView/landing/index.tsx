@@ -5,6 +5,7 @@ import {
   useMotionValueEvent,
   stagger,
   animate,
+  useTransform,
 } from "framer-motion";
 import Image from "next/image";
 import {
@@ -28,14 +29,17 @@ import { useLayout } from "@/hook/useLayoutHook";
 import { Home } from "@/components/section/home";
 
 const SectionDiv = ({ children }: { children: ReactElement }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "-100px"],
+  });
+  const scaleProgess = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   return (
     <motion.div
-      // initial={{ opacity: 0.8 }}
-      // whileInView={{ opacity: 1 }}
-      // exit={{ opacity: 0.8 }}
-      transition={{ duration: 0.5 }}
-      viewport={{ once: true, amount: 0.8 }}
-      className=" w-full min-h-screen pt-16 lg:pt-20  overflow-x-hidden   "
+      ref={ref}
+      className=" w-full  py-16  overflow-x-hidden   "
+      style={{ scale: scaleProgess }}
     >
       {children}
     </motion.div>
@@ -48,7 +52,6 @@ export const Landing = () => {
   const aboutRef = useRef<HTMLDivElement>(null);
   const experienceRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
 
   const onClickOption = (index: number) => {
     if (index == 0) {
