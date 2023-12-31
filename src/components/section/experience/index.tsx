@@ -113,7 +113,10 @@ export const Experience = () => {
                             href={item.companyLink}
                             isBlank
                           >
-                            <LinkIcon className="w-4 h-4 lg:w-5 lg:h-5" />
+                            <LinkIcon
+                              className="w-4 h-4 lg:w-5 lg:h-5"
+                              title={item.companyLink}
+                            />
                           </LinkView>
                         )}
                       </div>

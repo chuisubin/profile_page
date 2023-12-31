@@ -8,6 +8,30 @@ import clsx from "clsx";
 import { useTranslation } from "@/i18n/client";
 import { LinkIcon } from "@heroicons/react/24/solid";
 import { LinkView } from "@/components/common/LinkView";
+
+export const MoreBtn = ({
+  customClassName = "",
+  clickDetail,
+}: {
+  customClassName?: string;
+  clickDetail: () => void;
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <motion.button
+      className={clsx(
+        "text-base lg:text-lg rounded-md border  px-4 py-1 w-fit  mx-auto",
+        customClassName
+      )}
+      onClick={clickDetail}
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
+      {t("project.more")}
+    </motion.button>
+  );
+};
 export const ProjectItem = ({
   project,
   clickDetail,
@@ -16,23 +40,7 @@ export const ProjectItem = ({
   clickDetail: () => void;
 }) => {
   const [hover, setHover] = useState(false);
-  const { t } = useTranslation();
 
-  const MoreBtn = ({ customClassName = "" }: { customClassName?: string }) => {
-    return (
-      <motion.button
-        className={clsx(
-          "text-base lg:text-lg rounded-md border  px-4 py-1 w-fit  mx-auto",
-          customClassName
-        )}
-        onClick={clickDetail}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        {t("project.more")}
-      </motion.button>
-    );
-  };
   return (
     <>
       <div className=" lg:hidden mb-2">
@@ -44,7 +52,10 @@ export const ProjectItem = ({
               href={project.pjLink}
               isBlank
             >
-              <LinkIcon className="w-4 h-4 lg:w-5 lg:h-5 " />
+              <LinkIcon
+                className="w-4 h-4 lg:w-5 lg:h-5 "
+                title={project.pjLink}
+              />
             </LinkView>
           )}
         </span>
@@ -113,7 +124,7 @@ export const ProjectItem = ({
                     </span>
                   ))}
                 </div> */}
-                <MoreBtn />
+                <MoreBtn clickDetail={clickDetail} />
               </div>
             </motion.div>
           </div>
@@ -126,7 +137,10 @@ export const ProjectItem = ({
             {tech}
           </span>
         ))} */}
-        <MoreBtn customClassName={"dark:border-white border-primary-700"} />
+        <MoreBtn
+          customClassName={"dark:border-white border-primary-700"}
+          clickDetail={clickDetail}
+        />
       </div>
     </>
   );

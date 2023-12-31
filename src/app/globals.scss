@@ -162,6 +162,10 @@ background-clip: text;
   background: linear-gradient(90deg,  #fbae89, #f75002, #7a2502);
   background-size: 200% 200%;
 }
+.gradientProfileIcon{
+    background: linear-gradient(45deg,#7a2502, #f75002,#fbae89,#ffffff);
+    background-size: 200% 200%;
+}
 
 .element-to-rotate {
   animation: gradientChange 4s ease infinite;

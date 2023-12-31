@@ -28,7 +28,13 @@ import { Project } from "@/components/section/project";
 import { useLayout } from "@/hook/useLayoutHook";
 import { Home } from "@/components/section/home";
 
-const SectionDiv = ({ children }: { children: ReactElement }) => {
+const SectionDiv = ({
+  enableScale = true,
+  children,
+}: {
+  enableScale?: boolean;
+  children: ReactElement;
+}) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -39,7 +45,7 @@ const SectionDiv = ({ children }: { children: ReactElement }) => {
     <motion.div
       ref={ref}
       className=" w-full  py-16  overflow-x-hidden   "
-      style={{ scale: scaleProgess }}
+      style={enableScale ? { scale: scaleProgess } : undefined}
     >
       {children}
     </motion.div>
@@ -75,7 +81,7 @@ export const Landing = () => {
     <div className="  w-full  px-5 lg:px-20 ">
       <div className="  lg:container  xl:max-w-7xl mx-auto     relative  ">
         <motion.div className=" relative ">
-          <SectionDiv>
+          <SectionDiv enableScale={false}>
             <SpotlightCard>
               <div className="">
                 <Home onClickOption={onClickOption} />
