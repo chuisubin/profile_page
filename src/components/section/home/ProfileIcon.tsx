@@ -22,14 +22,22 @@ export const ProfileIcon = () => {
         animate={{ opacity: 1 }}
         className="rounded-full overflow-hidden  w-24 h-24 lg:w-32 lg:h-32   relative  border-4  border-secondary-500  bg-secondary-500 customBg "
       >
-        <motion.div whileHover={{ scale: 1.2 }} transition={{ duration: 0.5 }}>
+        <motion.div whileHover={{ scale: 1.1 }} transition={{ duration: 0.5 }}>
           <Image
             alt={"Angus Chui"}
             title={"Angus Chui"}
             width={200}
             height={200}
-            className=" rounded-full object-cover object-center  element-to-rotate gradientProfileIcon "
+            className={clsx(
+              " rounded-full object-cover object-center  element-to-rotate  no-select",
+              "gradientProfileIcon"
+            )}
             src={homeProfile.src}
+            // onDragStart={(event) => {
+            //   event.preventDefault();
+            // }}
+
+            draggable={false}
           />
         </motion.div>
       </motion.div>
