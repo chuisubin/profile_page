@@ -15,7 +15,7 @@ export const skillSetData = [
   "VueJs",
   "NodeJs",
   "Java",
-  "Tailwind",
+  "TailwindCSS",
   "HTML5",
   "CSS3",
   "Firebase",
@@ -26,6 +26,7 @@ export const skillSetData = [
   "Redux",
   "MySQL",
   "Github",
+  "Gitlab",
   "GraphQL",
   "Expo",
   "Material UI",
@@ -34,8 +35,9 @@ export const skillSetData = [
   "Android",
   "JQuery",
   "Storybook",
-  "Jira",
   "Framer Motion",
+  "ExpressJS",
+  "MongoDB",
 ];
 export const SkillView = () => {
   const { t } = useTranslation();
